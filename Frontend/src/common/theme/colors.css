@@ -1,0 +1,33 @@
+:root {
+
+    /* Primary */
+
+    --color-primary: #2563eb;
+    --color-primary-hover: #1d4ed8;
+
+    /* Backgrounds */
+
+    --color-background: #f8fafc;
+    --color-surface: #ffffff;
+
+    /* Sidebar */
+
+    --color-sidebar-bg: #111827;
+    --color-sidebar-hover: #1f2937;
+
+    /* Text */
+
+    --color-text-primary: #111827;
+    --color-text-secondary: #6b7280;
+
+    /* Borders */
+
+    --color-border: #e5e7eb;
+
+    /* Status */
+
+    --color-success: #22c55e;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+    --color-info: #3b82f6;
+}
