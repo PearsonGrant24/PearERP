@@ -1,6 +1,6 @@
 
 
-export default function Sidebar() {
+export default function Footer() {
     return(
         <div>
             
