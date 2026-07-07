@@ -5,32 +5,32 @@ export default function MainLayout() {
     return (
         <div className="layout">
 
+            {/* Sidebar */}
             <aside className="sidebar">
-
                 Sidebar
-
             </aside>
 
+            {/* Main Section */}
             <div className="main">
 
-                <header className="header">
-
+                {/* Navbar */}
+                <nav className="navbar">
                     Navbar
+                </nav>
 
-                    Breadcrumb
+                {/* Breadcrumb */}
+                <div className="breadcrumb">
+                    Dashboard / Sales / Quotations
+                </div>
 
-                </header>
-
-                <main className="content">
-
+                {/* Current Page */}
+                <main className="page">
                     <Outlet />
-
                 </main>
 
+                {/* Footer */}
                 <footer className="footer">
-
                     Footer
-
                 </footer>
 
             </div>

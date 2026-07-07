@@ -1,21 +1,81 @@
-.layout{
-    display:grid;
-    grid-template-columns:260px 1fr;
-    height:100vh;
+.layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    height: 100vh;
 }
 
-.main{
-    display:grid;
+/* ================= Sidebar ================= */
+
+.sidebar {
+    background: var(--color-sidebar-bg);
+    color: white;
+    overflow-y: auto;
+}
+
+/* ================= Right Side ================= */
+
+.main {
+    display: grid;
 
     grid-template-rows:
-        70px
-        45px
-        1fr
-        50px;
+        70px    /* Navbar */
+        45px    /* Breadcrumb */
+        1fr     /* Page */
+        50px;   /* Footer */
 
-    overflow:hidden;
+    overflow: hidden;
 }
 
-.page{
-    overflow-y:auto;
+/* ================= Navbar ================= */
+
+.navbar {
+    background: var(--color-surface);
+
+    border-bottom: 1px solid var(--color-border);
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 var(--space-6);
+}
+
+/* ================= Breadcrumb ================= */
+
+.breadcrumb {
+    background: var(--color-surface);
+
+    border-bottom: 1px solid var(--color-border);
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 var(--space-6);
+
+    color: var(--color-text-secondary);
+}
+
+/* ================= Content ================= */
+
+.page {
+    overflow-y: auto;
+
+    padding: var(--space-6);
+
+    background: var(--color-background);
+}
+
+/* ================= Footer ================= */
+
+.footer {
+    background: var(--color-surface);
+
+    border-top: 1px solid var(--color-border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 }
