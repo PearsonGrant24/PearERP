@@ -2,23 +2,39 @@ import { Outlet } from "react-router-dom";
 import "./MainLayout.css";
 
 export default function MainLayout() {
-  return (
-    <div className="layout">
-      <aside className="sidebar">
-        Sidebar
-      </aside>
+    return (
+        <div className="layout">
 
-      <header className="header">
-        Navbar
-      </header>
+            <aside className="sidebar">
 
-      <main className="content">
-        <Outlet />
-      </main>
+                Sidebar
 
-      <footer className="footer">
-        Footer
-      </footer>
-    </div>
-  );
+            </aside>
+
+            <div className="main">
+
+                <header className="header">
+
+                    Navbar
+
+                    Breadcrumb
+
+                </header>
+
+                <main className="content">
+
+                    <Outlet />
+
+                </main>
+
+                <footer className="footer">
+
+                    Footer
+
+                </footer>
+
+            </div>
+
+        </div>
+    );
 }
