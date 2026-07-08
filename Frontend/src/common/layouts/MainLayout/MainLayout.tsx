@@ -13,31 +13,14 @@ export default function MainLayout() {
             {/* Sidebar */}
             <Sidebar/>
 
-            {/* Main Section */}
-            <div className="main">
-
-                {/* Navbar */}
-                <nav className="navbar">
-                    Navbar
-                </nav>
-
-                {/* Breadcrumb */}
-                <div className="breadcrumb">
-                    Dashboard / Sales / Quotations
-                </div>
-
-                {/* Current Page */}
-                <main className="page">
-                    <Outlet />
-                </main>
-
-                {/* Footer */}
-                <footer className="footer">
-                    Footer
-                </footer>
-
-            </div>
-
+           <div className="main">
+    <Navbar />
+    <Breadcrumb />
+    <main className="page">
+        <Outlet />
+    </main>
+    <Footer />
+</div>
         </div>
     );
 }
