@@ -1,0 +1,15 @@
+.sidebar-group {
+    margin-bottom: 12px;
+}
+
+.sidebar-group__title {
+    padding: 12px 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.sidebar-group__children {
+    margin-left: 16px;
+}

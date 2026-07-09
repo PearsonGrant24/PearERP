@@ -1,6 +1,9 @@
 import "./Sidebar.css";
 import { navigation } from "../../../config/navigation.ts";
 
+import SidebarItem from "./SidebarItem";
+import SidebarGroup from "./SidebarGroup";
+
 export default function Sidebar() {
     return (
         <aside className="sidebar">
@@ -11,11 +14,28 @@ export default function Sidebar() {
             </div>
 
             <nav className="sidebar__menu">
-                {navigation.map((item) => (
-                    <div key={item.title} className="sidebar__item">
-                        {item.title}
-                    </div>
-                ))}
+
+                {navigation.map((item) =>
+
+                    item.children ? (
+
+                        <SidebarGroup
+                            key={item.title}
+                            title={item.title}
+                            children={item.children}
+                        />
+
+                    ) : (
+
+                        <SidebarItem
+                            key={item.title}
+                            title={item.title}
+                        />
+
+                    )
+
+                )}
+
             </nav>
 
             <div className="sidebar__footer">
