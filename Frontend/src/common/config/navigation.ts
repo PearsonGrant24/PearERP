@@ -20,6 +20,11 @@ export const navigation: Navigation[] = [
         title: "Dashboard",
         icon: LayoutDashboard,
         path: "/dashboard",
+
+        children: [
+
+            
+        ]
     },
 
     {
@@ -67,48 +72,80 @@ export const navigation: Navigation[] = [
         title: "Inventory",
         icon: Boxes,
         path: "/inventory",
+
+        children: [
+
+        ]
     },
 
     {
         title: "Purchasing",
         icon: Truck,
         path: "/purchasing",
+
+        children: [
+
+        ]
     },
 
     {
         title: "Manufacturing",
         icon: Factory,
         path: "/manufacturing",
+
+        children: [
+
+        ]
     },
 
     {
         title: "Accounting",
         icon: Calculator,
         path: "/accounting",
+
+        children: [
+
+        ]
     },
 
     {
         title: "CRM",
         icon: Users,
         path: "/crm",
+
+        children: [
+
+        ]
     },
 
     {
         title: "HR",
         icon: Briefcase,
         path: "/hr",
+
+        children: [
+
+        ]
     },
 
     {
         title: "Reports",
         icon: FileBarChart,
         path: "/reports",
+
+        children: [
+
+        ]
     },
 
     {
         title: "Settings",
         icon: Settings,
         path: "/settings",
+
+        children: [
+
+        ]
     }
 
 ];
