@@ -9,9 +9,12 @@ import {
     Briefcase,
     FileBarChart,
     Settings,
+    Import,
 } from "lucide-react";
 
-export const navigation = [
+import { Navigation } from "../types/Navigation.ts";
+
+export const navigation: Navigation[] = [
 
     {
         title: "Dashboard",
@@ -27,26 +30,32 @@ export const navigation = [
 
             {
                 title: "Quotations",
+                icon: FileBarChart,
                 path: "/sales/quotations",
+                
             },
 
             {
                 title: "Orders",
+                icon: FileBarChart,
                 path: "/sales/orders",
             },
 
             {
                 title: "Invoices",
+                icon: FileBarChart,
                 path: "/sales/invoices",
             },
 
             {
                 title: "Payments",
+                icon: FileBarChart,
                 path: "/sales/payments",
             },
 
             {
                 title: "Returns",
+                icon: FileBarChart,
                 path: "/sales/returns",
             }
 

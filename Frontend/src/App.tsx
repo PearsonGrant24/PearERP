@@ -1,6 +1,5 @@
-// import MainLayout from "./common/layouts/MainLayout";
-import MainLayout from "./common/layouts/MainLayout/MainLayout";
+import RoutePath from "./routes/routepath";
 
 export default function App() {
-    return <MainLayout />;
+    return <RoutePath />;
 }
