@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
 
     ChevronDown,
-
+    LayoutDashboard,
     ChevronRight,
     LucideIcon,
 
@@ -26,7 +26,6 @@ type Props={
     title:string;
     // path: string;
     icon: LucideIcon;
-
     children:Child[];
 
 };
@@ -60,6 +59,7 @@ export default function SidebarGroup({
                     <Icon size={20}/>
 
                     <span>{title}</span>
+                    
 
                 </div>
 
@@ -74,6 +74,7 @@ export default function SidebarGroup({
                     :
 
                     <ChevronRight size={18}/>
+                    
 
                 }
 
@@ -98,7 +99,8 @@ export default function SidebarGroup({
                                 path={child.path}
 
                                 icon={ChevronRight}   // temporary
-
+                                
+                                
                             />
 
                         ))

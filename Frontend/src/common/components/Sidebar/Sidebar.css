@@ -24,14 +24,20 @@
     opacity: .7;
 }
 
-.sidebar__menu {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+.sidebar__menu{
 
-    flex: 1;
+    flex:1;
 
-    padding: 16px;
+    display:flex;
+
+    flex-direction:column;
+
+    padding:16px;
+
+    gap:4px;
+
+    overflow-y:auto;
+
 }
 
 .sidebar__menu a {

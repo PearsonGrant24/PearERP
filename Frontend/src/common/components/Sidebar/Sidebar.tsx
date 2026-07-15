@@ -1,62 +1,123 @@
+// import "./Sidebar.css";
+// import { navigation } from "../../config/navigation";
+// import { NavLink } from "react-router-dom";
+// import SidebarItem from "./SidebarItem";
+
+// export default function Sidebar() {
+//     return (
+//         <aside className="sidebar">
+
+//             <div className="sidebar__logo">
+//                 <h2>Plastic ERP</h2>
+//                 <span>Small Business Suite</span>
+//             </div>
+
+//             <nav className="sidebar__menu">
+//                 <SidebarItem title={""} path={""} />
+
+//                 {navigation.map((item) => {
+
+//                     if ("children" in item) {
+
+//                         return (
+
+//                             <div key={item.title}>
+
+//                                 <h4>{item.title}</h4>
+// {/* 
+//                                 {item.children.map(child => (
+
+//                                     <NavLink
+//                                         key={child.title}
+//                                         to={child.path}
+//                                     >
+//                                         {child.title}
+//                                     </NavLink>
+
+//                                 ))} */}
+
+//                             </div>
+
+//                         );
+
+//                     }
+
+//                     return (
+                        
+//                         <div className="sidebar__children">
+//                             <NavLink
+//                                 key={item.title}
+//                                 to={item.path}
+//                             >
+//                                 {item.title}
+//                             </NavLink>
+//                         </div>
+
+//                     );
+
+//                 })}
+
+//             </nav>
+
+//         </aside>
+//     );
+// }
+
+
 import "./Sidebar.css";
+
 import { navigation } from "../../config/navigation";
-import { NavLink } from "react-router-dom";
+
+import SidebarItem from "./SidebarItem";
 
 export default function Sidebar() {
+
     return (
+
         <aside className="sidebar">
 
             <div className="sidebar__logo">
+
                 <h2>Plastic ERP</h2>
+
                 <span>Small Business Suite</span>
+
             </div>
 
             <nav className="sidebar__menu">
 
-                {navigation.map((item) => {
+                {
 
-                    if ("children" in item) {
+                    navigation.map(item => (
 
-                        return (
+                        <SidebarItem
 
-                            <div key={item.title}>
+                            key={item.title}
 
-                                <h4>{item.title}</h4>
+                            title={item.title}
 
-                                {item.children.map(child => (
+                            path={item.path}
 
-                                    <NavLink
-                                        key={child.title}
-                                        to={child.path}
-                                    >
-                                        {child.title}
-                                    </NavLink>
+                            icon={item.icon}
 
-                                ))}
+                        />
 
-                            </div>
+                    ))
 
-                        );
-
-                    }
-
-                    return (
-                        
-                        <div className="sidebar__children">
-                            <NavLink
-                                key={item.title}
-                                to={item.path}
-                            >
-                                {item.title}
-                            </NavLink>
-                        </div>
-
-                    );
-
-                })}
+                }
 
             </nav>
 
+            <div className="sidebar__footer">
+
+                <strong>Pearson Grant</strong>
+
+                <span>Administrator</span>
+
+            </div>
+
         </aside>
+
     );
+
 }

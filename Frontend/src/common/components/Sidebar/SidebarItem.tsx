@@ -14,26 +14,115 @@
 //     );
 // }
 
+// import { NavLink } from "react-router-dom";
+// // import { LayoutDashboard } from "lucide-react";
+
+// import "./SidebarItem.css";
+
+// import {
+//     LayoutDashboard,
+//     ShoppingCart,
+//     Boxes,
+//     Truck,
+//     Factory,
+//     Calculator,
+//     Users,
+//     Briefcase,
+//     FileBarChart,
+//     Settings,
+// } from "lucide-react";
+
+// const iconMap = {
+//     Dashboard: LayoutDashboard,
+//     Sales: ShoppingCart,
+//     Inventory: Boxes,
+//     Purchasing: Truck,
+//     Manufacturing: Factory,
+//     Accounting: Calculator,
+//     CRM: Users,
+//     HR: Briefcase,
+//     Reports: FileBarChart,
+//     Settings: Settings,
+// };
+
+// type Props = {
+//     title: string;
+//     path: string;
+// };
+
+// export default function SidebarItem({
+//     title,
+//     path,
+// }: Props) {
+//     return (
+//         <NavLink
+//             to={path}
+//             className="sidebar-item"
+//         >
+//             <LayoutDashboard
+//                     size={30}
+//                     color="Red"
+//                     strokeWidth={3}
+//                 />
+
+//             <span>{title}</span>
+//         </NavLink>
+//     );
+// }
+
 import { NavLink } from "react-router-dom";
-import { LucideIcon } from "lucide-react";
+
+import {
+    LayoutDashboard,
+    Boxes,
+    Truck,
+    Factory,
+    Calculator,
+    Users,
+    Briefcase,
+    FileBarChart,
+    Settings,
+} from "lucide-react";
+
+import "./SidebarItem.css";
 
 type Props = {
     title: string;
     path: string;
-    icon: LucideIcon;
+    icon: string;
+};
+
+const icons = {
+    dashboard: LayoutDashboard,
+    inventory: Boxes,
+    purchasing: Truck,
+    manufacturing: Factory,
+    accounting: Calculator,
+    crm: Users,
+    hr: Briefcase,
+    reports: FileBarChart,
+    settings: Settings,
 };
 
 export default function SidebarItem({
     title,
     path,
-    icon: Icon,
+    icon,
 }: Props) {
 
-    console.log("Icon:", Icon);
-    console.log("Type:", typeof Icon);
+    const Icon = icons[icon as keyof typeof icons];
 
     return (
-        <NavLink to={path}>
+        <NavLink
+            to={path}
+            className={({ isActive }) =>
+                isActive
+                    ? "sidebar-item active"
+                    : "sidebar-item"
+            }
+        >
+            <Icon size={20} />
+
             <span>{title}</span>
         </NavLink>
     );
