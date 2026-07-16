@@ -90,6 +90,7 @@ type Props = {
     title: string;
     path: string;
     icon: string;
+    collapsed: boolean;
 };
 
 const icons = {
@@ -108,6 +109,7 @@ export default function SidebarItem({
     title,
     path,
     icon,
+    collapsed,
 }: Props) {
 
     const Icon = icons[icon as keyof typeof icons];
@@ -123,7 +125,7 @@ export default function SidebarItem({
         >
             <Icon size={20} />
 
-            <span>{title}</span>
+            {!collapsed && <span>{title}</span>}
         </NavLink>
     );
 }

@@ -133,10 +133,10 @@ export default function Sidebar() {
                             title={item.title}
                             path={item.path}
                             icon={item.icon}
+                            collapsed={collapsed}
                         />
                     ))
                 }
-
             </nav>
 
             <div className="sidebar__footer">
