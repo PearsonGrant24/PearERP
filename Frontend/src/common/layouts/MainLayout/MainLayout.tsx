@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import "./MainLayout.css";
 
 import Sidebar from "../../components/Sidebar/Sidebar.tsx"
-import Navbar from "../../components/Navbar/Navbar.tsx";
+import Navbar from "./Navbar/Navbar.tsx";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb.tsx";
 import Footer from "../../Footer/Footer.tsx"
 
@@ -10,17 +10,20 @@ export default function MainLayout() {
     return (
         <div className="layout">
 
-            {/* Sidebar */}
-            <Sidebar/>
+    <Sidebar />
 
-           <div className="main">
-                <Navbar />
-                <Breadcrumb />
-                <main className="page">
-                    <Outlet />
-                </main>
-                <Footer />
-            </div>
-        </div>
+    <div className="main">
+
+        <Navbar />
+
+        <main className="page">
+
+            <Outlet />
+
+        </main>
+
+    </div>
+
+</div>
     );
 }

@@ -115,7 +115,9 @@ code {
 --surface-color
 --border-color
 --text-primary
+
 --surface
+--background
 
 * {
     margin: 0;

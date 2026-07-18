@@ -1,6 +1,6 @@
 .layout {
-    display: grid;
-    grid-template-columns: 260px 1fr;
+    display: flex;
+
     height: 100vh;
 }
 
@@ -15,15 +15,22 @@
 /* ================= Right Side ================= */
 
 .main {
-    display: grid;
+     flex:1;
 
-    grid-template-rows:
-        70px    /* Navbar */
-        45px    /* Breadcrumb */
-        1fr     /* Page */
-        50px;   /* Footer */
+    display:flex;
 
-    overflow: hidden;
+    flex-direction:column;
+
+    background:var(--background);
+}
+
+/* ================= Page ================= */
+.page{
+
+    flex:1;
+
+    padding:24px;
+
 }
 
 /* ================= Navbar ================= */
