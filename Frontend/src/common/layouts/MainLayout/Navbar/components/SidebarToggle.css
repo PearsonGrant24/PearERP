@@ -1,0 +1,33 @@
+.sidebar-toggle-btn{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    background:transparent;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.25s;
+
+    color:var(--text-secondary);
+
+}
+
+.sidebar-toggle-btn:hover{
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+}
