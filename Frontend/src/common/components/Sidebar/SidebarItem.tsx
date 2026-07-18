@@ -71,7 +71,7 @@
 // }
 
 import { NavLink } from "react-router-dom";
-
+import { useSidebar } from "../../context/SidebarContext";
 import {
     LayoutDashboard,
     Boxes,
@@ -110,9 +110,11 @@ export default function SidebarItem({
     path,
     icon,
     collapsed,
+
 }: Props) {
 
     const Icon = icons[icon as keyof typeof icons];
+   // const { collapsed } = useSidebar();
 
     return (
         <NavLink

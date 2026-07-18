@@ -68,10 +68,10 @@ import "./Sidebar.css";
 import { Factory } from "lucide-react";
 import { navigation } from "../../config/navigation";
 import SidebarItem from "./SidebarItem";
-import {
-    PanelLeftClose,
-    PanelLeftOpen,
-} from "lucide-react";
+// import {
+//     PanelLeftClose,
+//     PanelLeftOpen,
+// } from "lucide-react";
 
 import { useSidebar } from "../../context/SidebarContext";
 
@@ -92,12 +92,15 @@ export default function Sidebar() {
                 : "sidebar"
             }
         >
-            <div className="sidebar__logo">
-
-
+            
+            <div 
+                className="sidebar__logo" 
+                onClick={toggleSidebar}
+            >                 
                 
                 <div className="sidebar__logo-icon">
                     <Factory size={32} />
+                    
                 </div>
 
                 {!collapsed && (
@@ -105,23 +108,20 @@ export default function Sidebar() {
                         <h2>PX Industries ERP</h2>
                         <span>Small Business Suite</span>
                     </div>
-                )}
+                )}   
 
-                <button
-                    className="sidebar-toggle"
-
-                    onClick={toggleSidebar}
+                {/* <button
+                className="sidebar-toggle"
+                onClick={toggleSidebar}
                 >
-
                     {
                         collapsed
                         ?
-                        <PanelLeftOpen size={20}/>
+                        <PanelLeftOpen size={10}/>
                         :
                         <PanelLeftClose size={20}/>
                     }
-
-                </button>
+                </button>             */}
 
             </div>
                     
