@@ -93,11 +93,9 @@ export default function Sidebar() {
             }
         >
             
-            <div 
-                className="sidebar__logo" 
-                onClick={toggleSidebar}
-            >                 
-                
+            <div className="sidebar__logo" 
+                // onClick={toggleSidebar}
+            >                                 
                 <div className="sidebar__logo-icon">
                     <Factory size={32} />
                     
