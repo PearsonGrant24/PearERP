@@ -1,12 +1,19 @@
-:root {
+:root{
 
-    --font-family: "Inter", sans-serif;
+    --font-family:
 
-    --font-xs: 12px;
-    --font-sm: 14px;
-    --font-md: 16px;
-    --font-lg: 20px;
-    --font-xl: 24px;
-    --font-2xl: 32px;
+        "Inter",
+
+        "Segoe UI",
+
+        sans-serif;
+
+    --font-size-sm:13px;
+
+    --font-size-md:15px;
+
+    --font-size-lg:18px;
+
+    --font-size-xl:26px;
 
 }
