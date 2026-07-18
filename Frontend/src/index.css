@@ -115,6 +115,7 @@ code {
 --surface-color
 --border-color
 --text-primary
+--surface
 
 * {
     margin: 0;
@@ -132,5 +133,5 @@ body,
 }
 
 body {
-    background: var(--color-surface);
+    background: var(--surface);
 }
