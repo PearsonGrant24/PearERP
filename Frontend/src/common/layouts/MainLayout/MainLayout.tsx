@@ -3,7 +3,7 @@ import "./MainLayout.css";
 
 import Sidebar from "../../components/Sidebar/Sidebar.tsx"
 import Navbar from "./Navbar/Navbar.tsx";
-import Breadcrumb from "../../components/Breadcrumb/Breadcrumb.tsx";
+import Breadcrumb from "../../components/UI/Breadcrumb/Breadcrumb.tsx";
 import Footer from "../../Footer/Footer.tsx"
 
 export default function MainLayout() {

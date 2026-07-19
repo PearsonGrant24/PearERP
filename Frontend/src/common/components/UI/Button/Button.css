@@ -1,0 +1,75 @@
+.button{
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:12px 20px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+/* Primary */
+
+.button--primary{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.button--primary:hover{
+
+    opacity:.9;
+
+}
+
+/* Secondary */
+
+.button--secondary{
+
+    background:#e2e8f0;
+
+    color:#1e293b;
+
+}
+
+/* Success */
+
+.button--success{
+
+    background:var(--success);
+
+    color:white;
+
+}
+
+/* Danger */
+
+.button--danger{
+
+    background:var(--danger);
+
+    color:white;
+
+}
+
+/* Outline */
+
+.button--outline{
+
+    background:transparent;
+
+    color:var(--primary);
+
+    border:1px solid var(--primary);
+
+}

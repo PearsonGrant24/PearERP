@@ -8,6 +8,19 @@
     --primary-hover:#1d4ed8;
     --primary-light:#dbeafe;
 
+     /* Colors */
+
+    --primary:
+
+    --success:
+
+    --warning:
+
+    --danger:
+
+    --info:
+
+
     /* Backgrounds */
 
     --background:#f4f7fb;
@@ -39,5 +52,40 @@
     --danger:#ef4444;
 
     --info:#0ea5e9;
+
+
+     /* Backgrounds */
+
+    --surface:
+
+    --surface-hover:
+
+    --background:
+
+    /* Typography */
+
+    --text-primary:
+
+    --text-secondary:
+
+    /* Radius */
+
+    --radius-sm:
+
+    --radius-md:
+
+    --radius-lg:
+
+    /* Shadows */
+
+    --shadow-sm:
+
+    --shadow-md:
+
+    --shadow-lg;
+
+    /* Animation */
+
+    --transition:
 
 }
