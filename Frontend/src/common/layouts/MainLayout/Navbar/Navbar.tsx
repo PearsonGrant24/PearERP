@@ -1,4 +1,5 @@
 import "./Navbar.css";
+import LanguageSelector from "./components/LanguageSelector";
 import NotificationButton from "./components/NotificationButton";
 import SearchBar from "./components/SearchBar";
 
@@ -26,7 +27,10 @@ export default function Navbar() {
             <div className="navbar__right">
 
                 <ThemeToggle/>
+
                 <NotificationButton />
+
+                <LanguageSelector />
 
             </div>
 
