@@ -1,6 +1,9 @@
 import "./Navbar.css";
+import NotificationButton from "./components/NotificationButton";
+import SearchBar from "./components/SearchBar";
 
 import SidebarToggle from "./components/SidebarToggle";
+import ThemeToggle from "./components/ThemeToggle";
 
 export default function Navbar() {
 
@@ -16,13 +19,14 @@ export default function Navbar() {
 
             <div className="navbar__center">
 
-                Center
+                <SearchBar/>
 
             </div>
 
             <div className="navbar__right">
 
-                Right
+                <ThemeToggle/>
+                <NotificationButton />
 
             </div>
 
