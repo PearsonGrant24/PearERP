@@ -1,0 +1,45 @@
+.language-selector{
+
+    height:42px;
+
+    padding:0 12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:transparent;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    color:var(--text-secondary);
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+.language-selector:hover{
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+}
+
+.language-selector span{
+
+    min-width:22px;
+
+    text-align:center;
+
+}
