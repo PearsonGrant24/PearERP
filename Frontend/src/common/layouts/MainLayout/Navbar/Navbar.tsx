@@ -5,6 +5,7 @@ import SearchBar from "./components/SearchBar";
 
 import SidebarToggle from "./components/SidebarToggle";
 import ThemeToggle from "./components/ThemeToggle";
+import UserMenu from "./components/UserMenu";
 
 export default function Navbar() {
 
@@ -31,6 +32,8 @@ export default function Navbar() {
                 <NotificationButton />
 
                 <LanguageSelector />
+
+                <UserMenu />
 
             </div>
 
