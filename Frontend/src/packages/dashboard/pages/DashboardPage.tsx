@@ -1,8 +1,9 @@
 import DashboardHeader from "../components/DashboardHeader/DashboardHeader";
 import DashboardGrid from "../components/DashboardGrid/DashboardGrid";
 
-import Card from "../../../common/ui/Card/Card";
-import StatisticCard from "../components/StatisticCard/StatisticCard,";
+//import Card from "../../../common/ui/Card/Card";
+import StatisticCard from "../components/StatisticCard/StatisticCard";
+import Statistics from "../components/Statistics/Statistcs";
 
 export default function DashboardPage() {
 
@@ -10,7 +11,7 @@ export default function DashboardPage() {
 
         <>
 
-            <DashboardHeader />
+            {/* <DashboardHeader />
 
             <DashboardGrid>
 
@@ -48,7 +49,16 @@ export default function DashboardPage() {
 
         </DashboardGrid>
 
-                </>
+                </> */}
+
+
+                <DashboardHeader/>
+
+<Statistics/>
+
+{/*</><Analytics/>
+
+<BusinessOverview/>*/}</>
 
             );
 
