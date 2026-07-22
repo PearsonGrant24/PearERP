@@ -6,7 +6,7 @@
 
     border-radius:16px;
 
-    padding:24px;
+    padding:20px;
 
     box-shadow:var(--shadow-sm);
 
@@ -16,9 +16,9 @@
 
 .stat-card:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-6px);
 
-    box-shadow:var(--shadow-md);
+    box-shadow:0 16px 35px rgba(0,0,0,.12);
 
 }
 
@@ -111,3 +111,4 @@
     background:#8B5CF6;
 
 }
+

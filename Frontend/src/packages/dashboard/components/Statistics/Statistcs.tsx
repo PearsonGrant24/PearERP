@@ -9,6 +9,7 @@ export default function Statistics() {
             <StatisticCard
                 title="Total Sales"
                 value="$34,520"
+                
                 subtitle="+12.5% from last month"
                 color="blue"
             />
