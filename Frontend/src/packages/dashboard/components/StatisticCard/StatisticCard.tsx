@@ -1,4 +1,11 @@
 import "./StatisticCard.css";
+import {
+    DollarSign,
+    TrendingUp,
+    FileText,
+    Package,
+    Users,
+} from "lucide-react";
 
 import { ReactNode } from "react";
 
