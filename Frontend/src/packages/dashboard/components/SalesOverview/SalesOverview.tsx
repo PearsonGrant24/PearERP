@@ -7,6 +7,7 @@ import {
     CartesianGrid,
     XAxis,
     Tooltip,
+    YAxis,
 } from "recharts";
 
 // import Card from "../../../common/components/Card/Card";
@@ -36,6 +37,7 @@ export default function SalesOverview() {
                         />
 
                         <XAxis dataKey="month" />
+                        <YAxis />
 
                         <Tooltip />
 
@@ -50,25 +52,6 @@ export default function SalesOverview() {
 
                 </ResponsiveContainer>
 
-                {/* <div
-                    style={{
-                        height: "320px",
-                        background: "#f5f5f5",
-                        borderRadius: "8px",
-                    }}
-                    >
-
-                Chart goes here
-                
-                </div>
-
-                <ResponsiveContainer
-    width="100%"
-    height={320}
->
-    <LineChart data={[]} />
-</ResponsiveContainer>
-*/}
             </div> 
 
         </Card>
