@@ -50,12 +50,14 @@ export default function DashboardPage() {
         </DashboardGrid>
 
                 </> */}
-
+            {/* <DashboardGrid> */}
 
                 <DashboardHeader/>
 
-<Statistics/>
-
+                <Statistics/>
+                {/* <SalesCategory />
+                <TopProducts/> */}
+            {/* </DashboardGrid> */}
 {/*</><Analytics/>
 
 <BusinessOverview/>*/}</>
