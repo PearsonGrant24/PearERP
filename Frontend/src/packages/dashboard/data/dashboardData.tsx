@@ -12,3 +12,26 @@ export const salesData = [
     { month: "Nov", sales: 6900 },
     { month: "Dec", sales: 8100 },
 ];
+
+export const categoryData = [
+    {
+        name: "Kitchenware",
+        value: 35,
+    },
+    {
+        name: "Agriculture",
+        value: 25,
+    },
+    {
+        name: "Construction",
+        value: 18,
+    },
+    {
+        name: "Automotive",
+        value: 12,
+    },
+    {
+        name: "Other",
+        value: 10,
+    },
+];

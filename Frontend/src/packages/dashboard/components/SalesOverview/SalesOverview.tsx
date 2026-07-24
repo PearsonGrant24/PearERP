@@ -33,6 +33,7 @@ export default function SalesOverview() {
                     <LineChart data={salesData}>
 
                         <CartesianGrid
+                            vertical={false}
                             strokeDasharray="3 3"
                         />
 
@@ -42,10 +43,12 @@ export default function SalesOverview() {
                         <Tooltip />
 
                         <Line
-                            type="monotone"
+                            type="natural"
                             dataKey="sales"
                             stroke="#3b82f6"
                             strokeWidth={3}
+                            dot={{ r: 4 }}
+                            activeDot={{ r: 7 }}
                         />
 
                     </LineChart>
