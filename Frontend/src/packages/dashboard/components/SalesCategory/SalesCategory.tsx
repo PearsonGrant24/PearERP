@@ -15,6 +15,8 @@ import {
     Tooltip,
 
     Legend,
+    
+    Label,
 
 } from "recharts";
 
@@ -87,6 +89,15 @@ export default function SalesCategory() {
                                 ))
 
                             }
+                            <Label
+    value="100%"
+    position="center"
+    style={{
+        fontSize: "24px",
+        fontWeight: 700,
+        fill: "#111827",
+    }}
+/>
 
                         </Pie>
 
