@@ -5,6 +5,7 @@ import DashboardGrid from "../components/DashboardGrid/DashboardGrid";
 import StatisticCard from "../components/StatisticCard/StatisticCard";
 import Statistics from "../components/Statistics/Statistcs";
 import SalesOverview from "../components/SalesOverview/SalesOverview";
+import SalesCategory from "../components/SalesCategory/SalesCategory";
 
 export default function DashboardPage() {
 
@@ -57,8 +58,8 @@ export default function DashboardPage() {
 
                 <Statistics/>
                 <SalesOverview/>
-                {/* <SalesCategory />
-                <TopProducts/> */}
+                <SalesCategory />
+              {/*  <TopProducts/> */}
             {/* </DashboardGrid> */}
 {/*</><Analytics/>
 
