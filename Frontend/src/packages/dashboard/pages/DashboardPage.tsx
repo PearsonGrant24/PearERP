@@ -7,70 +7,31 @@ import Statistics from "../components/Statistics/Statistcs";
 import SalesOverview from "../components/SalesOverview/SalesOverview";
 import SalesCategory from "../components/SalesCategory/SalesCategory";
 import DashboardSection from "../../../common/ui/DashboardSection/DashboardSection";
+import TopProducts from "../components/TopProducts/TopProducts";
 
 export default function DashboardPage() {
 
     return (
 
-        <>
+        <>                    
+            <DashboardHeader/>
 
-            {/* <DashboardHeader />
-
-            <DashboardGrid>
-
-            <StatisticCard
-
-                title="Revenue"
-
-                value="$4,530"
-
-            />
-
-            <StatisticCard
-
-                title="Orders"
-
-                value="48"
-
-            />
-
-            <StatisticCard
-
-                title="Outstanding Quotes"
-
-                value="12"
-
-            />
-
-            <StatisticCard
-
-                title="Low Stock"
-
-                value="6"
-
-            />
-
-        </DashboardGrid>
-
-                </> */}
-            {/* <DashboardGrid> */}
-
-                <DashboardHeader/>
-
-                <Statistics/>
+            <Statistics/>
+            
+            <div className="dashboard-grid">
 
                 <DashboardSection>
 
-                    <SalesOverview/>
+                <SalesOverview/>
 
-                    <SalesCategory/>
+                <SalesCategory/>
 
                 </DashboardSection>
-              {/*  <TopProducts/> */}
-            {/* </DashboardGrid> */}
-{/*</><Analytics/>
 
-<BusinessOverview/>*/}</>
+                <TopProducts/>
+            </div>
+            
+            </>
 
             );
 
