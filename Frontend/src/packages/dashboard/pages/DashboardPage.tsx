@@ -57,15 +57,15 @@ export default function DashboardPage() {
 
                 <DashboardHeader/>
 
-<Statistics/>
+                <Statistics/>
 
-<DashboardSection>
+                <DashboardSection>
 
-    <SalesOverview/>
+                    <SalesOverview/>
 
-    <SalesCategory/>
+                    <SalesCategory/>
 
-</DashboardSection>
+                </DashboardSection>
               {/*  <TopProducts/> */}
             {/* </DashboardGrid> */}
 {/*</><Analytics/>

@@ -19,17 +19,16 @@
 
 /* Charts */
 .sales-overview {
-
-    grid-column: span 8;
-
+    grid-column: span 6;
 }
 
 .sales-category {
-
-    grid-column: span 4;
-
+    grid-column: span 3;
 }
 
+.top-products {
+    grid-column: span 3;
+}
 /* Tables */
 .recent-invoices {
 

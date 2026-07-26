@@ -56,7 +56,7 @@ export default function SalesCategory() {
 
                     width="100%"
 
-                    height={320}
+                    height={300}
 
                 >
 
@@ -70,9 +70,9 @@ export default function SalesCategory() {
 
                             nameKey="name"
 
-                            innerRadius={70}
+                            innerRadius={60}
 
-                            outerRadius={100}
+                            outerRadius={88}
 
                             paddingAngle={3}
 
