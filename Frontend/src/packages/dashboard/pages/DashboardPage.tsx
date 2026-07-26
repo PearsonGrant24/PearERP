@@ -4,10 +4,11 @@ import DashboardGrid from "../components/DashboardGrid/DashboardGrid";
 //import Card from "../../../common/ui/Card/Card";
 import StatisticCard from "../components/StatisticCard/StatisticCard";
 import Statistics from "../components/Statistics/Statistcs";
-import SalesOverview from "../components/SalesOverview/SalesOverview";
-import SalesCategory from "../components/SalesCategory/SalesCategory";
+import SalesOverview from "../components/DashboardCharts/SalesOverview/SalesOverview";
+import SalesCategory from "../components/DashboardCharts/SalesCategory/SalesCategory";
 import DashboardSection from "../../../common/ui/DashboardSection/DashboardSection";
-import TopProducts from "../components/TopProducts/TopProducts";
+import TopProducts from "../components/DashboardCharts/TopProducts/TopProducts";
+import DashboardCharts from "../../../common/layouts/DashboardLayout/DashboardCharts";
 
 export default function DashboardPage() {
 
@@ -20,15 +21,17 @@ export default function DashboardPage() {
             
             <div className="dashboard-grid">
 
-                <DashboardSection>
+                <DashboardCharts>
 
-                <SalesOverview/>
+                    <SalesOverview />
 
-                <SalesCategory/>
+                    <SalesCategory />
 
-                </DashboardSection>
+                    <TopProducts />
 
-                <TopProducts/>
+                </DashboardCharts>
+
+               
             </div>
             
             </>

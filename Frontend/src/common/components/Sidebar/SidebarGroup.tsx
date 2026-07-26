@@ -26,6 +26,7 @@ type Props={
     title:string;
     // path: string;
     icon: LucideIcon;
+
     children:Child[];
 
 };
@@ -98,7 +99,7 @@ export default function SidebarGroup({
 
                                 path={child.path}
 
-                                icon={ChevronRight}   // temporary
+                                // icon={ChevronRight}   // temporary
                                 
                                 
                             />

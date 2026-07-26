@@ -1,6 +1,6 @@
 import "./SalesCategory.css";
 
-import Card from "../../../../common/ui/Card/Card";
+import Card from "../../../../../common/ui/Card/Card";
 
 import {
 
@@ -24,7 +24,7 @@ import {
 
     categoryData,
 
-} from "../../data/dashboardData";
+} from "../../../data/dashboardData";
 
 const COLORS = [
 

@@ -1,8 +1,8 @@
 import "./TopProducts.css";
 
-import Card from "../Card/Card";
+import Card from "../../Card/Card";
 
-import { topProducts } from "../../data/dashboardData";
+import { topProducts } from "../../../data/dashboardData";
 
 import { ChevronRight } from "lucide-react";
 

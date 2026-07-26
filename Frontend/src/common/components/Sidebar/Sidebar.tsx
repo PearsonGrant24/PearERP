@@ -1,77 +1,8 @@
-// import "./Sidebar.css";
-// import { navigation } from "../../config/navigation";
-// import { NavLink } from "react-router-dom";
-// import SidebarItem from "./SidebarItem";
-
-// export default function Sidebar() {
-//     return (
-//         <aside className="sidebar">
-
-//             <div className="sidebar__logo">
-//                 <h2>Plastic ERP</h2>
-//                 <span>Small Business Suite</span>
-//             </div>
-
-//             <nav className="sidebar__menu">
-//                 <SidebarItem title={""} path={""} />
-
-//                 {navigation.map((item) => {
-
-//                     if ("children" in item) {
-
-//                         return (
-
-//                             <div key={item.title}>
-
-//                                 <h4>{item.title}</h4>
-// {/* 
-//                                 {item.children.map(child => (
-
-//                                     <NavLink
-//                                         key={child.title}
-//                                         to={child.path}
-//                                     >
-//                                         {child.title}
-//                                     </NavLink>
-
-//                                 ))} */}
-
-//                             </div>
-
-//                         );
-
-//                     }
-
-//                     return (
-                        
-//                         <div className="sidebar__children">
-//                             <NavLink
-//                                 key={item.title}
-//                                 to={item.path}
-//                             >
-//                                 {item.title}
-//                             </NavLink>
-//                         </div>
-
-//                     );
-
-//                 })}
-
-//             </nav>
-
-//         </aside>
-//     );
-// }
-
-
 import "./Sidebar.css";
 import { Factory } from "lucide-react";
 import { navigation } from "../../config/navigation";
 import SidebarItem from "./SidebarItem";
-// import {
-//     PanelLeftClose,
-//     PanelLeftOpen,
-// } from "lucide-react";
+
 
 import { useSidebar } from "../../context/SidebarContext";
 

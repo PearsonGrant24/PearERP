@@ -11,11 +11,11 @@ import {
 } from "recharts";
 
 // import Card from "../../../common/components/Card/Card";
-import Card from "../Card/Card"
+import Card from "../../Card/Card"
 // import Card from "../../../../common/ui/Card/Card"
 
 // import { salesData } from "../data/dashboardData";
-import { salesData } from "../../data/dashboardData";
+import { salesData } from "../../../data/dashboardData";
 
 export default function SalesOverview() {
 
