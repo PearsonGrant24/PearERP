@@ -1,11 +1,58 @@
-.dashboard-grid{
+.dashboard-grid {
 
-    display:grid;
+    display: grid;
 
-    grid-template-columns:repeat(12,1fr);
+    grid-template-columns: repeat(12, 1fr);
 
-    gap:24px;
+    gap: 24px;
 
-    margin-top:24px;
+    margin-top: 24px;
+
+}
+
+/* Statistics row */
+.statistics {
+
+    grid-column: span 12;
+
+}
+
+/* Charts */
+.sales-overview {
+
+    grid-column: span 8;
+
+}
+
+.sales-category {
+
+    grid-column: span 4;
+
+}
+
+/* Tables */
+.recent-invoices {
+
+    grid-column: span 8;
+
+}
+
+.recent-activities {
+
+    grid-column: span 4;
+
+}
+
+/* Responsive */
+@media (max-width:1100px){
+
+    .sales-overview,
+    .sales-category,
+    .recent-invoices,
+    .recent-activities{
+
+        grid-column: span 12;
+
+    }
 
 }

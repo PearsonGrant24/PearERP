@@ -44,9 +44,13 @@ export default function SalesCategory() {
 
     return (
 
+        <div className="sales-category">
         <Card title="Sales Category">
 
             <div className="sales-category">
+
+                 <div className="sales-category__chart">
+
 
                 <ResponsiveContainer
 
@@ -90,29 +94,56 @@ export default function SalesCategory() {
 
                             }
                             <Label
-    value="100%"
-    position="center"
-    style={{
-        fontSize: "24px",
-        fontWeight: 700,
-        fill: "#111827",
-    }}
-/>
+                                value="126k"
+                                position="center"
+                                style={{
+                                    fontSize: "24px",
+                                    fontWeight: 700,
+                                    fill: "#111827",
+                                }}
+                            />
 
                         </Pie>
 
                         <Tooltip />
 
-                        <Legend />
+                        {/* <Legend /> */}
 
                     </PieChart>
 
                 </ResponsiveContainer>
+                </div>
+
+                <div className="sales-category__legend">
+
+                    {categoryData.map((item, index) => (
+
+                        <div
+                            key={item.name}
+                            className="legend-item"
+                        >
+
+                            <span
+                                className="legend-color"
+                                style={{
+                                    background: COLORS[index],
+                                }}
+                            />
+
+                            <span>{item.name}</span>
+
+                            <strong>{item.value}%</strong>
+
+                        </div>
+
+                    ))}
+
+                </div>
 
             </div>
 
         </Card>
-
+        </div>
     );
 
 }

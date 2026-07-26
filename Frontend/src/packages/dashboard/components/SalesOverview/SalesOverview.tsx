@@ -21,6 +21,7 @@ export default function SalesOverview() {
 
     return (
 
+        <div className="sales-overview">
         <Card title="Sales Overview">
 
             <div className="sales-overview">
@@ -58,6 +59,7 @@ export default function SalesOverview() {
             </div> 
 
         </Card>
+        </div>
 
     );
 
