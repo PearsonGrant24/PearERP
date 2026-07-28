@@ -9,6 +9,8 @@ import SalesCategory from "../components/DashboardCharts/SalesCategory/SalesCate
 import DashboardSection from "../../../common/ui/DashboardSection/DashboardSection";
 import TopProducts from "../components/DashboardCharts/TopProducts/TopProducts";
 import DashboardCharts from "../components/Layout/DashboardCharts";
+import DashboardTables from "../components/Layout/DashboardTables";
+import RecentInvoices from "../components/RecentInvoices/RecentInvoices";
 
 
 export default function DashboardPage() {
@@ -16,7 +18,7 @@ export default function DashboardPage() {
     return (
 
         <>                    
-            <DashboardHeader/>
+            {/* <DashboardHeader/>
 
             <Statistics/>
             
@@ -33,7 +35,30 @@ export default function DashboardPage() {
                 </DashboardCharts>
 
                
-            </div>
+            </div> */}
+
+
+            <DashboardHeader />
+
+            <Statistics />
+
+            <DashboardCharts>
+
+                <SalesOverview />
+
+                <SalesCategory />
+
+                <TopProducts />
+
+            </DashboardCharts>
+
+            <DashboardTables>
+
+                <RecentInvoices />
+
+                {/* RecentActivities will go here next */}
+
+            </DashboardTables>
             
             </>
 
