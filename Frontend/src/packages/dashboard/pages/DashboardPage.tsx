@@ -8,7 +8,8 @@ import SalesOverview from "../components/DashboardCharts/SalesOverview/SalesOver
 import SalesCategory from "../components/DashboardCharts/SalesCategory/SalesCategory";
 import DashboardSection from "../../../common/ui/DashboardSection/DashboardSection";
 import TopProducts from "../components/DashboardCharts/TopProducts/TopProducts";
-import DashboardCharts from "../../../common/layouts/DashboardLayout/DashboardCharts";
+import DashboardCharts from "../components/Layout/DashboardCharts";
+
 
 export default function DashboardPage() {
 
