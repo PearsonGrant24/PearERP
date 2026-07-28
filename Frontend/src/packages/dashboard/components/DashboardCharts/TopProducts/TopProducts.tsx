@@ -1,6 +1,6 @@
 import "./TopProducts.css";
 
-import Card from "../../Card/Card";
+import Card from "../../../components/Card/Card";
 
 import { topProducts } from "../../../data/dashboardData";
 
