@@ -72,3 +72,39 @@ export const topProducts = [
         revenue: "$2,650",
     },
 ];
+
+export const recentInvoices = [
+
+    {
+        id: "INV-1001",
+        customer: "BuildMart",
+        status: "Paid",
+        amount: "$1,250",
+        date: "25 Jul 2026",
+    },
+
+    {
+        id: "INV-1002",
+        customer: "Green Farms",
+        status: "Pending",
+        amount: "$840",
+        date: "24 Jul 2026",
+    },
+
+    {
+        id: "INV-1003",
+        customer: "ABC Plastics",
+        status: "Overdue",
+        amount: "$2,150",
+        date: "22 Jul 2026",
+    },
+
+    {
+        id: "INV-1004",
+        customer: "Delta Hardware",
+        status: "Paid",
+        amount: "$980",
+        date: "21 Jul 2026",
+    },
+
+];
