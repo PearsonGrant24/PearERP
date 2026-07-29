@@ -62,17 +62,17 @@ export default function Card({
 
                     </div>
 
-    {action && (
+                    {action && (
 
-        <div className="card__action">
+                        <div className="card__action">
 
-            {action}
+                            {action}
 
-        </div>
+                        </div>
 
-    )}
+                    )}
 
-</div>
+                </div>
 
             )}
 
