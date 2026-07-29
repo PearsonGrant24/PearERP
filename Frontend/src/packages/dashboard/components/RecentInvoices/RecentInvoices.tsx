@@ -12,7 +12,16 @@ export default function RecentInvoices() {
 
         <div className="recent-invoices">
 
-            <Card title="Recent Invoices">
+            <Card
+                title="Recent Invoices"
+                action={
+                    <button className="card-link">
+
+                        View All
+
+                    </button>
+                }
+            >
 
                 <table className="invoice-table">
 
@@ -74,13 +83,6 @@ export default function RecentInvoices() {
 
                 </table>
 
-                <div className="recent-invoices__footer">
-
-                    View All
-
-                    <ChevronRight size={18} />
-
-                </div>
 
             </Card>
 

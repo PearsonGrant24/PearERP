@@ -1,5 +1,3 @@
-
-
 :root{
 
     /* Primary */
@@ -19,6 +17,8 @@
     --danger:
 
     --info:
+
+    --color-primary
 
 
     /* Backgrounds */
@@ -52,6 +52,8 @@
     --danger:#ef4444;
 
     --info:#0ea5e9;
+
+    --color-primary:#0479af;
 
 
      /* Backgrounds */

@@ -109,3 +109,25 @@
     cursor:pointer;
 
 }
+
+.card-link{
+
+    background:none;
+
+    border:none;
+
+    color:var(--color-primary);
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    font-size:14px;
+
+}
+
+.card-link:hover{
+
+    text-decoration:underline;
+
+}
