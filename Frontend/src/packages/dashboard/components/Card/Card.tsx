@@ -12,6 +12,8 @@ type CardProps = {
 
     footer?: ReactNode;
 
+    action?: ReactNode;
+
 };
 
 export default function Card({
@@ -24,6 +26,8 @@ export default function Card({
 
     footer,
 
+    action,
+
 }: CardProps) {
 
     return (
@@ -34,27 +38,41 @@ export default function Card({
 
                 <div className="card__header">
 
-                    {title && (
+                    <div>
 
-                        <h3 className="card__title">
+                        {title && (
 
-                            {title}
+                            <h3 className="card__title">
 
-                        </h3>
+                                {title}
 
-                    )}
+                            </h3>
 
-                    {subtitle && (
+                        )}
 
-                        <p className="card__subtitle">
+                        {subtitle && (
 
-                            {subtitle}
+                            <p className="card__subtitle">
 
-                        </p>
+                                {subtitle}
 
-                    )}
+                            </p>
 
-                </div>
+                        )}
+
+                    </div>
+
+    {action && (
+
+        <div className="card__action">
+
+            {action}
+
+        </div>
+
+    )}
+
+</div>
 
             )}
 
