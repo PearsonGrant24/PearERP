@@ -83,7 +83,6 @@ export default function RecentInvoices() {
 
                 </table>
 
-
             </Card>
 
         </div>

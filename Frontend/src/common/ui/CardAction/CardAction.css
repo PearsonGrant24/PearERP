@@ -1,0 +1,29 @@
+.card-action{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    color:var(--color-primary);
+
+    font-weight:600;
+
+    font-size:14px;
+
+    transition:.2s;
+
+}
+
+.card-action:hover{
+
+    opacity:.8;
+
+}

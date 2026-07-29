@@ -1,9 +1,7 @@
 import "./Card.css";
-
 import { ReactNode } from "react";
 
 type CardProps = {
-
     children: ReactNode;
 
     title?: string;
@@ -13,51 +11,36 @@ type CardProps = {
     footer?: ReactNode;
 
     action?: ReactNode;
-
 };
 
 export default function Card({
-
     children,
-
     title,
-
     subtitle,
-
     footer,
-
     action,
-
 }: CardProps) {
 
     return (
 
         <div className="card">
 
-            {(title || subtitle) && (
+            {(title || subtitle || action) && (
 
                 <div className="card__header">
 
-                    <div>
+                    <div className="card__header-content">
 
                         {title && (
-
                             <h3 className="card__title">
-
                                 {title}
-
                             </h3>
-
                         )}
 
                         {subtitle && (
-
                             <p className="card__subtitle">
-
                                 {subtitle}
-
                             </p>
-
                         )}
 
                     </div>
