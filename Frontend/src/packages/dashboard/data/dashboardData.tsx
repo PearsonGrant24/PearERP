@@ -108,3 +108,42 @@ export const recentInvoices = [
     },
 
 ];
+
+export const recentActivities = [
+
+    {
+        id: 1,
+        title: "John approved Purchase Order #1023",
+        time: "5 min ago",
+        type: "purchase",
+    },
+
+    {
+        id: 2,
+        title: "Sales Invoice INV-1005 created",
+        time: "20 min ago",
+        type: "sales",
+    },
+
+    {
+        id: 3,
+        title: "Production Order #301 completed",
+        time: "1 hour ago",
+        type: "manufacturing",
+    },
+
+    {
+        id: 4,
+        title: "Inventory adjusted (+120 PVC Pipes)",
+        time: "2 hours ago",
+        type: "inventory",
+    },
+
+    {
+        id: 5,
+        title: 'Mary created customer "ABC Plastics"',
+        time: "Yesterday",
+        type: "customer",
+    },
+
+];

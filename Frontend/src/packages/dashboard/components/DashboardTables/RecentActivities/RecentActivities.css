@@ -1,0 +1,120 @@
+.recent-activities{
+
+    width:100%;
+
+}
+
+.activities{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.activity{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:16px;
+
+    position:relative;
+
+}
+
+.activity:not(:last-child)::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:17px;
+
+    top:36px;
+
+    width:2px;
+
+    height:34px;
+
+    background:var(--border);
+
+}
+
+.activity__icon{
+
+    width:36px;
+
+    height:36px;
+
+    min-width:36px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    z-index:1;
+
+}
+
+.activity__content{
+
+    flex:1;
+
+}
+
+.activity__title{
+
+    font-weight:600;
+
+    color:var(--text-primary);
+
+    line-height:1.4;
+
+}
+
+.activity__time{
+
+    margin-top:4px;
+
+    font-size:13px;
+
+    color:var(--text-secondary);
+
+}
+
+.activity{
+
+    transition:.2s;
+
+}
+
+.activity:hover{
+
+    transform:translateX(4px);
+
+}
+
+.activity-item{
+    transition:.2s;
+    cursor:pointer;
+}
+
+.activity-item:hover{
+    transform:translateX(4px);
+}
+
+.invoice-table tbody tr:hover{
+    background:var(--surface-hover);
+}

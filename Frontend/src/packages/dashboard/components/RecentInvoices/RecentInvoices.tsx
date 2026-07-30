@@ -5,6 +5,7 @@ import Card from "../Card/Card";
 import { ChevronRight } from "lucide-react";
 
 import { recentInvoices } from "../../data/dashboardData";
+import CardAction from "../../../../common/ui/CardAction/CardAction";
 
 export default function RecentInvoices() {
 
@@ -15,12 +16,14 @@ export default function RecentInvoices() {
             <Card
                 title="Recent Invoices"
                 action={
-                    <button className="card-link">
 
-                        View All
+                <CardAction
 
-                    </button>
-                }
+                    label="View All"
+
+                />
+
+            }
             >
 
                 <table className="invoice-table">

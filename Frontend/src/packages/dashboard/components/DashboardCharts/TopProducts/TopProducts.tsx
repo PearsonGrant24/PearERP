@@ -1,9 +1,6 @@
 import "./TopProducts.css";
-
 import Card from "../../../components/Card/Card";
-
 import { topProducts } from "../../../data/dashboardData";
-
 import { ChevronRight } from "lucide-react";
 
 export default function TopProducts() {
