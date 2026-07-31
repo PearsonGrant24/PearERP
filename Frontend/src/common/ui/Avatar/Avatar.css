@@ -1,0 +1,13 @@
+.avatar{
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    display:block;
+
+    border:2px solid white;
+
+    box-shadow:var(--shadow-sm);
+
+}
