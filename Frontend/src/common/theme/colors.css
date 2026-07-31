@@ -5,7 +5,7 @@
     --primary:#2563eb;
     --primary-hover:#1d4ed8;
     --primary-light:#dbeafe;
-    --surface-hover:#dbeafe
+    --surface-hover:#dbeafe;
 
      /* Colors */
 
@@ -55,6 +55,8 @@
     --info:#0ea5e9;
 
     --color-primary:#0479af;
+
+    --shadow-sm:#eb2f2f;
 
 
      /* Backgrounds */

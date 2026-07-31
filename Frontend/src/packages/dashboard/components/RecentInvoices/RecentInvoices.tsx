@@ -6,6 +6,7 @@ import { ChevronRight } from "lucide-react";
 
 import { recentInvoices } from "../../data/dashboardData";
 import CardAction from "../../../../common/ui/CardAction/CardAction";
+import Badge from "../../../../common/ui/Badge/Badge";
 
 export default function RecentInvoices() {
 
@@ -59,17 +60,17 @@ export default function RecentInvoices() {
                                     <td>{invoice.customer}</td>
 
                                     <td>
-
-                                        <span
-
-                                            className={`status ${invoice.status.toLowerCase()}`}
-
+                                        <Badge
+                                            variant={
+                                                invoice.status === "Paid"
+                                                    ? "success"
+                                                    : invoice.status === "Pending"
+                                                    ? "warning"
+                                                    : "danger"
+                                            }
                                         >
-
                                             {invoice.status}
-
-                                        </span>
-
+                                        </Badge>
                                     </td>
 
                                     <td>{invoice.amount}</td>
@@ -79,17 +80,10 @@ export default function RecentInvoices() {
                                 </tr>
 
                             ))
-
                         }
-
                     </tbody>
-
                 </table>
-
             </Card>
-
         </div>
-
     );
-
 }

@@ -91,3 +91,12 @@
     cursor:pointer;
 
 }
+
+.activity-item{
+    transition:.2s;
+    cursor:pointer;
+}
+
+.activity-item:hover{
+    transform:translateX(4px);
+}
