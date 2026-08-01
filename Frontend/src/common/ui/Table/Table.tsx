@@ -2,11 +2,11 @@ import "./Table.css";
 
 import EmptyState from "../EmptyState/EmptyState";
 
-import { Package } from "lucide-react";
+import { Database } from "lucide-react";
 
 import { Column } from "./types";
 
-type TableProps<T> = {
+type TableProps<T extends { id: string | number }> = {
 
     columns: Column<T>[];
 
@@ -28,11 +28,11 @@ export default function Table<T extends { id: string | number }>({
 
             <EmptyState
 
-                icon={<Package size={36} />}
+                icon={<Database size={40}/>}
 
-                title="No Data"
+                title="No data found"
 
-                description="Nothing to display."
+                description="There are no records to display."
 
             />
 
@@ -50,19 +50,27 @@ export default function Table<T extends { id: string | number }>({
 
                     <tr>
 
-                        {
+                        {columns.map(column => (
 
-                            columns.map(column => (
+                            <th
 
-                                <th key={String(column.key)}>
+                                key={String(column.key)}
 
-                                    {column.header}
+                                style={{
 
-                                </th>
+                                    width: column.width,
 
-                            ))
+                                    textAlign: column.align ?? "left",
 
-                        }
+                                }}
+
+                            >
+
+                                {column.header}
+
+                            </th>
+
+                        ))}
 
                     </tr>
 
@@ -70,43 +78,37 @@ export default function Table<T extends { id: string | number }>({
 
                 <tbody>
 
-                    {
+                    {data.map(row => (
 
-                        data.map(row => (
+                        <tr key={row.id}>
 
-                            <tr key={row.id}>
+                            {columns.map(column => (
 
-                                {
+                                <td
 
-                                    columns.map(column => (
+                                    key={String(column.key)}
 
-                                        <td key={String(column.key)}>
+                                    style={{
 
-                                            {
+                                        textAlign: column.align ?? "left",
 
-                                                column.render
+                                    }}
 
-                                                ?
+                                >
 
-                                                column.render(row)
+                                    {column.render
 
-                                                :
+                                        ? column.render(row)
 
-                                                String(row[column.key])
+                                        : String(row[column.key])}
 
-                                            }
+                                </td>
 
-                                        </td>
+                            ))}
 
-                                    ))
+                        </tr>
 
-                                }
-
-                            </tr>
-
-                        ))
-
-                    }
+                    ))}
 
                 </tbody>
 

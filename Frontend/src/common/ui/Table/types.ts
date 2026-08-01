@@ -1,9 +1,15 @@
+import { ReactNode } from "react";
+
 export type Column<T> = {
 
     key: keyof T;
 
     header: string;
 
-    render?: (row: T) => React.ReactNode;
+    width?: string;
+
+    align?: "left" | "center" | "right";
+
+    render?: (row: T) => ReactNode;
 
 };
