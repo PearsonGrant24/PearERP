@@ -17,16 +17,13 @@ export default function RecentInvoices() {
             <Card
                 title="Recent Invoices"
                 action={
-
-                <CardAction
-
-                    label="View All"
-
-                />
-
+                    <CardAction
+                        label="View All"
+                    />
             }
             >
 
+            <div className="card__body">
                 <table className="invoice-table">
 
                     <thead>
@@ -83,6 +80,7 @@ export default function RecentInvoices() {
                         }
                     </tbody>
                 </table>
+            </div>
             </Card>
         </div>
     );

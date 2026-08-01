@@ -16,48 +16,54 @@ import Card from "../../Card/Card"
 
 // import { salesData } from "../data/dashboardData";
 import { salesData } from "../../../data/dashboardData";
+import CardAction from "../../../../../common/ui/CardAction/CardAction";
 
 export default function SalesOverview() {
 
     return (
 
         <div className="sales-overview">
-        <Card title="Sales Overview">
-
-            <div className="sales-overview">
-
-                <ResponsiveContainer
-                    width="100%"
-                    height={320}
+        <Card 
+            title="Sales Overview"
+            action={
+                <CardAction label="View All" />
+                 }   
                 >
+            <div className="card__body">
+                <div className="sales-overview">
 
-                    <LineChart data={salesData}>
+                    <ResponsiveContainer
+                        width="100%"
+                        height={320}
+                    >
 
-                        <CartesianGrid
-                            vertical={false}
-                            strokeDasharray="3 3"
-                        />
+                        <LineChart data={salesData}>
 
-                        <XAxis dataKey="month" />
-                        <YAxis />
+                            <CartesianGrid
+                                vertical={false}
+                                strokeDasharray="3 3"
+                            />
 
-                        <Tooltip />
+                            <XAxis dataKey="month" />
+                            <YAxis />
 
-                        <Line
-                            type="natural"
-                            dataKey="sales"
-                            stroke="#3b82f6"
-                            strokeWidth={3}
-                            dot={{ r: 4 }}
-                            activeDot={{ r: 7 }}
-                        />
+                            <Tooltip />
 
-                    </LineChart>
+                            <Line
+                                type="natural"
+                                dataKey="sales"
+                                stroke="#3b82f6"
+                                strokeWidth={3}
+                                dot={{ r: 4 }}
+                                activeDot={{ r: 7 }}
+                            />
 
-                </ResponsiveContainer>
+                        </LineChart>
 
-            </div> 
+                    </ResponsiveContainer>
 
+                </div> 
+            </div>
         </Card>
         </div>
 
