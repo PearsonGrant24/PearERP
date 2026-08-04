@@ -2,8 +2,6 @@ import "./RecentInvoices.css";
 
 import Card from "../Card/Card";
 
-import { ChevronRight } from "lucide-react";
-
 import { recentInvoices } from "../../data/dashboardData";
 import CardAction from "../../../../common/ui/CardAction/CardAction";
 import Badge from "../../../../common/ui/Badge/Badge";
