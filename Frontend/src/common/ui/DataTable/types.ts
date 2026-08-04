@@ -10,6 +10,8 @@ export type Column<T> = {
 
     align?: "left" | "center" | "right";
 
+    sortable?: boolean;
+
     render?: (row: T) => ReactNode;
 
 };
