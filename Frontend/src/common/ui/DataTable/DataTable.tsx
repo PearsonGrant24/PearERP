@@ -136,7 +136,7 @@ export default function DataTable<T extends { id: string | number }>({
 
                 <tbody>
 
-                    {data.map(row => (
+                    {sortedData.map(row => (
 
                         <tr key={row.id}>
 
