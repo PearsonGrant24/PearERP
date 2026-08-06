@@ -6,7 +6,7 @@ export interface Invoice {
 
     status: "Paid" | "Pending" | "Overdue";
 
-    amount: string;
+    amount: number;
 
     date: string;
 
@@ -93,7 +93,7 @@ export const recentInvoices: Invoice[] = [
         id: "INV-1001",
         customer: "BuildMart",
         status: "Paid",
-        amount: "$1,250",
+        amount: 1250,
         date: "25 Jul 2026",
     },
 
@@ -101,7 +101,7 @@ export const recentInvoices: Invoice[] = [
         id: "INV-1002",
         customer: "Green Farms",
         status: "Pending",
-        amount: "$840",
+        amount: 840,
         date: "24 Jul 2026",
     },
 
@@ -109,7 +109,7 @@ export const recentInvoices: Invoice[] = [
         id: "INV-1003",
         customer: "ABC Plastics",
         status: "Overdue",
-        amount: "$2,150",
+        amount: 2150,
         date: "22 Jul 2026",
     },
 
@@ -117,7 +117,7 @@ export const recentInvoices: Invoice[] = [
         id: "INV-1004",
         customer: "Delta Hardware",
         status: "Paid",
-        amount: "$980",
+        amount: 980,
         date: "21 Jul 2026",
     },
 
