@@ -1,3 +1,17 @@
+export interface Invoice {
+
+    id: string;
+
+    customer: string;
+
+    status: "Paid" | "Pending" | "Overdue";
+
+    amount: string;
+
+    date: string;
+
+}
+
 export const salesData = [
     { month: "Jan", sales: 2200 },
     { month: "Feb", sales: 3100 },
@@ -73,7 +87,7 @@ export const topProducts = [
     },
 ];
 
-export const recentInvoices = [
+export const recentInvoices: Invoice[] = [
 
     {
         id: "INV-1001",

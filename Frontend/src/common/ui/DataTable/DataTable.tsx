@@ -1,4 +1,4 @@
-import "./Table.css";
+import "./DataTable.css";
 
 import EmptyState from "../EmptyState/EmptyState";
 

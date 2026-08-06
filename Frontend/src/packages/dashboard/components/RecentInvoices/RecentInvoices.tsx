@@ -5,8 +5,51 @@ import Card from "../Card/Card";
 import { recentInvoices } from "../../data/dashboardData";
 import CardAction from "../../../../common/ui/CardAction/CardAction";
 import Badge from "../../../../common/ui/Badge/Badge";
+import DataTable from "../../../../common/ui/DataTable/DataTable";
+import { Column } from "../../../../common/ui/DataTable/types";
+import { Invoice } from "../../data/dashboardData";
 
 export default function RecentInvoices() {
+
+     const columns: Column<Invoice>[] = [
+        {
+            key: "id",
+            header: "Invoice",
+            sortable: true,
+        },
+        {
+    key: "customer",
+    header: "Customer",
+    sortable: true,
+},
+{
+    key: "status",
+    header: "Status",
+    render: (row) => (
+        <Badge
+            variant={
+                row.status === "Paid"
+                    ? "success"
+                    : row.status === "Pending"
+                    ? "warning"
+                    : "danger"
+            }
+        >
+            {row.status}
+        </Badge>
+    ),
+},
+{
+    key: "amount",
+    header: "Amount",
+    sortable: true,
+},
+{
+    key: "date",
+    header: "Date",
+    sortable: true,
+},
+    ];
 
     return (
 
@@ -20,8 +63,12 @@ export default function RecentInvoices() {
                     />
             }
             >
+            <DataTable
+                columns={columns}
+                data={recentInvoices}
+            />
 
-            <div className="card__body">
+            {/* <div className="card__body">
                 <table className="invoice-table">
 
                     <thead>
@@ -78,7 +125,7 @@ export default function RecentInvoices() {
                         }
                     </tbody>
                 </table>
-            </div>
+            </div> */}
             </Card>
         </div>
     );
