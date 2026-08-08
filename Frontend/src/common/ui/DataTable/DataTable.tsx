@@ -58,6 +58,31 @@ export default function DataTable<T extends { id: string | number }>({
 
     const selected = selectedRows ?? [];
 
+    // const allSelected =
+    //     data.length > 0 &&
+    //     selected.length === data.length;
+
+    function toggleRow(id: string | number) {
+
+        if (!onSelectionChange) return;
+
+        if (selected.includes(id)) {
+
+            onSelectionChange(
+                selected.filter(item => item !== id)
+            );
+
+        } else {
+
+            onSelectionChange([
+                ...selected,
+                id,
+            ]);
+
+            }
+
+        }
+
     if (data.length === 0) {
 
         return (
@@ -146,42 +171,42 @@ export default function DataTable<T extends { id: string | number }>({
 
                     {sortedData.map(row => (
 
-                        <tr key={row.id}>
+                        <tr key={row.id}
+                        className={
+                            selected.includes(row.id)
+                                ? "selected"
+                                : ""
+                            }
+                        >
+
+                            <td className="checkbox-column">
+
+                                <input
+                                    type="checkbox"
+                                    checked={selected.includes(row.id)}
+                                    onChange={() => toggleRow(row.id)}
+                                />
+
+                            </td>
 
                             {columns.map(column => (
 
                                 <td
-
                                     key={String(column.key)}
-
                                     style={{
-
                                         textAlign: column.align ?? "left",
-
                                     }}
-
                                 >
 
                                     {column.render
-
                                         ? column.render(row)
-
                                         : String(row[column.key])}
-
                                 </td>
-
                             ))}
-
                         </tr>
-
                     ))}
-
                 </tbody>
-
             </table>
-
         </div>
-
     );
-
 }
