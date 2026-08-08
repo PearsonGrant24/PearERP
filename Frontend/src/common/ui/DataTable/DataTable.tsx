@@ -7,16 +7,13 @@ import { Column } from "./types";
 import { useSorting } from "./hooks/useSorting";
 
 import {
-
     Database,
-
     ArrowUpDown,
-
     ArrowUp,
-
     ArrowDown,
-
 } from "lucide-react";
+
+
 
 type TableProps<T extends { id: string | number }> = {
 
@@ -33,11 +30,17 @@ type TableProps<T extends { id: string | number }> = {
 };
 
 
+
+
 export default function DataTable<T extends { id: string | number }>({
 
     columns,
 
-    data,  
+    data,
+
+    selectedRows,
+
+    onSelectionChange,
 
 }: TableProps<T>) {
 
@@ -53,6 +56,7 @@ export default function DataTable<T extends { id: string | number }>({
 
     } = useSorting(data);
 
+    const selected = selectedRows ?? [];
 
     if (data.length === 0) {
 

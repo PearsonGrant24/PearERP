@@ -83,3 +83,17 @@
     color:var(--color-primary);
 
 }
+
+.checkbox-column{
+
+    width:48px;
+
+    text-align:center;
+
+}
+
+.selected{
+
+    background:#eef6ff;
+
+}
