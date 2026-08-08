@@ -1,4 +1,5 @@
 import "./DataTable.css";
+import { useEffect, useRef } from "react";
 
 import EmptyState from "../EmptyState/EmptyState";
 
@@ -58,10 +59,27 @@ export default function DataTable<T extends { id: string | number }>({
 
     const selected = selectedRows ?? [];
 
+    const selectAllRef = useRef<HTMLInputElement>(null);
+
     const allSelected =
         data.length > 0 &&
         selected.length === data.length;
+
+    const someSelected =
+        selected.length > 0 &&
+        !allSelected;
         
+    useEffect(() => {
+
+        if (selectAllRef.current) {
+
+            selectAllRef.current.indeterminate =
+                someSelected;
+
+        }
+
+    }, [someSelected]);
+
     function toggleAll() {
 
             if (!onSelectionChange) return;
@@ -134,6 +152,7 @@ export default function DataTable<T extends { id: string | number }>({
                         <th className="checkbox-column">
 
                             <input
+                                ref={selectAllRef}
                                 type="checkbox"
                                 checked={allSelected}
                                 onChange={toggleAll}
