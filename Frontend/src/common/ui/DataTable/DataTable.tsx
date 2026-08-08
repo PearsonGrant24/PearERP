@@ -58,9 +58,27 @@ export default function DataTable<T extends { id: string | number }>({
 
     const selected = selectedRows ?? [];
 
-    // const allSelected =
-    //     data.length > 0 &&
-    //     selected.length === data.length;
+    const allSelected =
+        data.length > 0 &&
+        selected.length === data.length;
+        
+    function toggleAll() {
+
+            if (!onSelectionChange) return;
+
+            if (allSelected) {
+
+                onSelectionChange([]);
+
+            } else {
+
+                onSelectionChange(
+                    data.map(row => row.id)
+                );
+
+            }
+
+        }
 
     function toggleRow(id: string | number) {
 
@@ -82,6 +100,9 @@ export default function DataTable<T extends { id: string | number }>({
             }
 
         }
+
+    
+    
 
     if (data.length === 0) {
 
@@ -110,7 +131,15 @@ export default function DataTable<T extends { id: string | number }>({
                 <thead>
 
                     <tr>
+                        <th className="checkbox-column">
 
+                            <input
+                                type="checkbox"
+                                checked={allSelected}
+                                onChange={toggleAll}
+                            />
+
+                        </th>
                         {columns.map(column => (
 
                             <th
