@@ -24,6 +24,12 @@ type TableProps<T extends { id: string | number }> = {
 
     data: T[];
 
+    selectedRows?: (string | number)[];
+
+    onSelectionChange?: (
+        ids: (string | number)[]
+    ) => void;
+
 };
 
 
@@ -31,9 +37,7 @@ export default function DataTable<T extends { id: string | number }>({
 
     columns,
 
-    data,
-
-    
+    data,  
 
 }: TableProps<T>) {
 
