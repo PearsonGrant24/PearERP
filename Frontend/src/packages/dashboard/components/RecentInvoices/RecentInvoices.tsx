@@ -1,5 +1,5 @@
 import "./RecentInvoices.css";
-
+import { useState } from "react";
 import Card from "../Card/Card";
 
 import { recentInvoices } from "../../data/dashboardData";
@@ -9,7 +9,13 @@ import DataTable from "../../../../common/ui/DataTable/DataTable";
 import { Column } from "../../../../common/ui/DataTable/types";
 import { Invoice } from "../../data/dashboardData";
 
+
+
 export default function RecentInvoices() {
+
+    const [selectedInvoices, setSelectedInvoices] = useState<
+        (string | number)[]
+    >([]);
 
      const columns: Column<Invoice>[] = [
         {
@@ -66,6 +72,8 @@ export default function RecentInvoices() {
             <DataTable
                 columns={columns}
                 data={recentInvoices}
+                selectedRows={selectedInvoices}
+                onSelectionChange={setSelectedInvoices}
             />
 
             {/* <div className="card__body">
