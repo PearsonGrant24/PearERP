@@ -118,6 +118,7 @@ export default function RecentInvoices() {
                     iconOnly
                     variant="outline"
                     title="Export"
+                    aria-label="Export selected invoices"
                     onClick={handleExport}
                 >
                     <Download size={18} />
@@ -127,6 +128,7 @@ export default function RecentInvoices() {
                     iconOnly
                     variant="outline"
                     title="Print"
+                    aria-label="Print selected invoices"
                     onClick={handlePrint}
                 >
                     <Printer size={18} />
@@ -135,6 +137,7 @@ export default function RecentInvoices() {
                 <Button 
                     iconOnly
                     variant="danger"
+                    aria-label="Delete selected invoices"
                     onClick={handleDelete}
                     title="Delete"
                 >
