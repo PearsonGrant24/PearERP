@@ -22,7 +22,7 @@
 
     background:var(--primary);
 
-    color:var(--color-primary);
+    color:rgb(255, 255, 255);
 
 }
 
@@ -38,7 +38,7 @@
 
     background:#e2e8f0;
 
-    color:#1e293b;
+    color:#085feb;
 
 }
 
@@ -71,5 +71,21 @@
     color:var(--primary);
 
     border:1px solid var(--primary);
+
+}
+
+.button--icon-only {
+
+    width: 36px;
+
+    height: 36px;
+
+    padding: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
 
 }

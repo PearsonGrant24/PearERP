@@ -1,29 +1,33 @@
 import "./Button.css";
+
 import { ButtonHTMLAttributes } from "react";
 
 type Variant =
-
     | "primary"
-
     | "secondary"
-
     | "success"
-
     | "danger"
-
     | "outline";
 
-type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
+type Props =
+    ButtonHTMLAttributes<HTMLButtonElement> & {
 
-    variant?: Variant;
+        variant?: Variant;
 
-};
+        iconOnly?: boolean;
+
+    };
 
 export default function Button({
 
     children,
+
     variant = "primary",
+
+    iconOnly = false,
+
     className = "",
+
     ...props
 
 }: Props) {
@@ -31,13 +35,21 @@ export default function Button({
     return (
 
         <button
+
             className={
-                `button button--${variant} ${className}`
+                `button button--${variant}` +
+                `${iconOnly ? " button--icon-only" : ""}` +
+                ` ${className}`
             }
+
             {...props}
+
         >
+
             {children}
+
         </button>
+
     );
 
 }

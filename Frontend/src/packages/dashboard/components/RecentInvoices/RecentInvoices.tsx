@@ -115,24 +115,30 @@ export default function RecentInvoices() {
                 selectedCount={selectedInvoices.length}
             >
                 <Button
-                    onClick={handleExport}
+                    iconOnly
+                    variant="outline"
                     title="Export"
+                    onClick={handleExport}
                 >
                     <Download size={18} />
                 </Button>
 
                 <Button
-                    onClick={handlePrint}
+                    iconOnly
+                    variant="outline"
                     title="Print"
+                    onClick={handlePrint}
                 >
                     <Printer size={18} />
                 </Button>
 
                 <Button 
+                    iconOnly
+                    variant="danger"
                     onClick={handleDelete}
                     title="Delete"
                 >
-                    <Trash2 size={18} />
+                    <Trash2 size={16} />
                 </Button>
             </DataTableToolbar>
 
