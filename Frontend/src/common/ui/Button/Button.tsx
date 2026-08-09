@@ -1,5 +1,4 @@
 import "./Button.css";
-
 import { ButtonHTMLAttributes } from "react";
 
 type Variant =
@@ -23,11 +22,8 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
 export default function Button({
 
     children,
-
     variant = "primary",
-
     className = "",
-
     ...props
 
 }: Props) {
@@ -35,21 +31,13 @@ export default function Button({
     return (
 
         <button
-
             className={
-
                 `button button--${variant} ${className}`
-
             }
-
             {...props}
-
         >
-
             {children}
-
         </button>
-
     );
 
 }

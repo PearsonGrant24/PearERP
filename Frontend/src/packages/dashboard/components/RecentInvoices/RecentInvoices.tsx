@@ -12,7 +12,11 @@ import Badge from "../../../../common/ui/Badge/Badge";
 // import DataTable from "../../../../common/ui/DataTable/DataTable";
 import { Column } from "../../../../common/ui/DataTable/types";
 import { Invoice } from "../../data/dashboardData";
-
+import {
+    Trash2,
+    Printer,
+    Download,
+} from "lucide-react";
 
 
 export default function RecentInvoices() {
@@ -112,20 +116,23 @@ export default function RecentInvoices() {
             >
                 <Button
                     onClick={handleExport}
+                    title="Export"
                 >
-                    Export
+                    <Download size={18} />
                 </Button>
 
                 <Button
                     onClick={handlePrint}
+                    title="Print"
                 >
-                    Print
+                    <Printer size={18} />
                 </Button>
 
                 <Button 
                     onClick={handleDelete}
+                    title="Delete"
                 >
-                    Delete
+                    <Trash2 size={18} />
                 </Button>
             </DataTableToolbar>
 
