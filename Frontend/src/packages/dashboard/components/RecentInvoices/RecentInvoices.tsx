@@ -1,3 +1,7 @@
+import DataTable, {
+    DataTableToolbar
+} from "../../../../common/ui/DataTable";
+import Button from "../../../../common/ui/Button/Button"
 import "./RecentInvoices.css";
 import { useState } from "react";
 import Card from "../Card/Card";
@@ -5,13 +9,46 @@ import Card from "../Card/Card";
 import { recentInvoices } from "../../data/dashboardData";
 import CardAction from "../../../../common/ui/CardAction/CardAction";
 import Badge from "../../../../common/ui/Badge/Badge";
-import DataTable from "../../../../common/ui/DataTable/DataTable";
+// import DataTable from "../../../../common/ui/DataTable/DataTable";
 import { Column } from "../../../../common/ui/DataTable/types";
 import { Invoice } from "../../data/dashboardData";
 
 
 
 export default function RecentInvoices() {
+
+    const [invoices, setInvoices] = useState(recentInvoices);
+
+    function handleDelete() {
+
+        setInvoices(currentInvoices =>
+            currentInvoices.filter(
+                invoice =>
+                    !selectedInvoices.includes(invoice.id)
+            )
+        );
+
+        setSelectedInvoices([]);
+
+    }
+
+    function handleExport() {
+
+        console.log(
+            "Exporting invoices:",
+            selectedInvoices
+        );
+
+    }
+
+    function handlePrint() {
+
+    console.log(
+        "Printing invoices:",
+        selectedInvoices
+    );
+
+}
 
     const [selectedInvoices, setSelectedInvoices] = useState<
         (string | number)[]
@@ -69,13 +106,36 @@ export default function RecentInvoices() {
                     />
             }
             >
+
+            <DataTableToolbar
+                selectedCount={selectedInvoices.length}
+            >
+                <Button
+                    onClick={handleExport}
+                >
+                    Export
+                </Button>
+
+                <Button
+                    onClick={handlePrint}
+                >
+                    Print
+                </Button>
+
+                <Button 
+                    onClick={handleDelete}
+                >
+                    Delete
+                </Button>
+            </DataTableToolbar>
+
             <DataTable
                 columns={columns}
-                data={recentInvoices}
+                data={invoices}
                 selectedRows={selectedInvoices}
                 onSelectionChange={setSelectedInvoices}
             />
-
+            
             {/* <div className="card__body">
                 <table className="invoice-table">
 
