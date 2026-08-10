@@ -29,10 +29,9 @@ type TableProps<T extends { id: string | number }> = {
         ids: (string | number)[]
     ) => void;
 
+    pageSize?: number;
+
 };
-
-
-
 
 export default function DataTable<T extends { id: string | number }>({
 
@@ -44,6 +43,8 @@ export default function DataTable<T extends { id: string | number }>({
 
     onSelectionChange,
 
+    pageSize = 10,
+    
 }: TableProps<T>) {
 
     const {
@@ -60,7 +61,7 @@ export default function DataTable<T extends { id: string | number }>({
 
     const {
         currentPage,
-        pageSize,
+        pageSize: currentPageSize,
         totalPages,
         startIndex,
         endIndex,
@@ -68,20 +69,15 @@ export default function DataTable<T extends { id: string | number }>({
         nextPage,
         previousPage,
     } = usePagination({
-
         totalItems: sortedData.length,
-
-        initialPageSize: 10,
-
+        initialPageSize: pageSize,
     });
 
     const paginatedData =
     sortedData.slice(
         startIndex,
         endIndex
-    );
-
-    
+    );    
 
     const selected = selectedRows ?? [];
 
@@ -108,21 +104,21 @@ export default function DataTable<T extends { id: string | number }>({
 
     function toggleAll() {
 
-            if (!onSelectionChange) return;
+        if (!onSelectionChange) return;
 
-            if (allSelected) {
+        if (allSelected) {
 
-                onSelectionChange([]);
+            onSelectionChange([]);
 
-            } else {
+        } else {
 
-                onSelectionChange(
-                    paginatedData.map(row => row.id)
-                );
-
-            }
+            onSelectionChange(
+                data.map(row => row.id)
+            );
 
         }
+
+    }
 
     function toggleRow(id: string | number) {
 
@@ -290,7 +286,7 @@ export default function DataTable<T extends { id: string | number }>({
 
                     totalItems={sortedData.length}
 
-                    pageSize={pageSize}
+                    pageSize={currentPageSize}
 
                     startIndex={startIndex}
 
@@ -303,6 +299,7 @@ export default function DataTable<T extends { id: string | number }>({
                     onPageChange={goToPage}
 
                 />
+                
 
         </div>
     );

@@ -150,66 +150,9 @@ export default function RecentInvoices() {
                 data={invoices}
                 selectedRows={selectedInvoices}
                 onSelectionChange={setSelectedInvoices}
+                pageSize={5}
             />
-            
-            {/* <div className="card__body">
-                <table className="invoice-table">
-
-                    <thead>
-
-                        <tr>
-
-                            <th>Invoice</th>
-
-                            <th>Customer</th>
-
-                            <th>Status</th>
-
-                            <th>Amount</th>
-
-                            <th>Date</th>
-
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-
-                        {
-
-                            recentInvoices.map(invoice => (
-
-                                <tr key={invoice.id}>
-
-                                    <td>{invoice.id}</td>
-
-                                    <td>{invoice.customer}</td>
-
-                                    <td>
-                                        <Badge
-                                            variant={
-                                                invoice.status === "Paid"
-                                                    ? "success"
-                                                    : invoice.status === "Pending"
-                                                    ? "warning"
-                                                    : "danger"
-                                            }
-                                        >
-                                            {invoice.status}
-                                        </Badge>
-                                    </td>
-
-                                    <td>{invoice.amount}</td>
-
-                                    <td>{invoice.date}</td>
-
-                                </tr>
-
-                            ))
-                        }
-                    </tbody>
-                </table>
-            </div> */}
+         
             </Card>
         </div>
     );

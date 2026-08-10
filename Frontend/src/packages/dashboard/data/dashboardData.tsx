@@ -6,7 +6,7 @@ export interface Invoice {
 
     status: "Paid" | "Pending" | "Overdue";
 
-    amount: number;
+    amount: string;
 
     date: string;
 
@@ -86,8 +86,16 @@ export const topProducts = [
         revenue: "$2,650",
     },
 ];
+// export const recentInvoices: Invoice[] = [
 
-export const recentInvoices = [
+//     {
+//         id: "INV-1001",
+//         customer: "BuildMart",
+//         status: "Paid",
+//         amount: 1250,
+//         date: "25 Jul 2026",
+//     },
+export const recentInvoices: Invoice[] = [
 
     {
         id: "INV-1001",
@@ -282,6 +290,8 @@ export const recentInvoices = [
     },
 
 ];
+
+
 
 export const recentActivities = [
 
