@@ -241,3 +241,61 @@
     color: var(--text-secondary);
 
 }
+
+/* recentinvoice search */
+
+.data-table-toolbar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+
+}
+
+.data-table-search {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: 280px;
+
+    padding: 9px 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 6px;
+
+    background: var(--surface);
+
+}
+
+.data-table-search svg {
+
+    color: var(--text-secondary);
+
+    flex-shrink: 0;
+
+}
+
+.data-table-search input {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--text-primary);
+
+    font-size: 14px;
+
+}

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 type UsePaginationProps = {
     totalItems: number;
@@ -23,6 +23,25 @@ export function usePagination({
             1,
             Math.ceil(totalItems / pageSize)
         );
+
+    useEffect(() => {
+
+       if (totalPages === 0) {
+
+        setCurrentPage(1);
+
+        return;
+
+    }
+    if (currentPage > totalPages) {
+
+        setCurrentPage(1);
+
+    }
+
+        }, [currentPage, totalPages]);
+
+
 
     const startIndex =
         (currentPage - 1) * pageSize;

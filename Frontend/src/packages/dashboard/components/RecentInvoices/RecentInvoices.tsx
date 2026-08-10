@@ -151,6 +151,13 @@ export default function RecentInvoices() {
                 selectedRows={selectedInvoices}
                 onSelectionChange={setSelectedInvoices}
                 pageSize={5}
+                searchableKeys={[
+                    "id",
+                    "customer",
+                    "status",
+                    "amount",
+                    "date",
+                ]}
             />
          
             </Card>

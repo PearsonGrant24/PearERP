@@ -10,11 +10,13 @@ import {
     ArrowUpDown,
     ArrowUp,
     ArrowDown,
+    Search,
 } from "lucide-react";
 
 import DataTablePagination from "./DataTablePagination";
 
 import { usePagination } from "./hooks/usePagination";
+import { useSearch } from "./hooks/useSearch";
 
 
 type TableProps<T extends { id: string | number }> = {
@@ -31,6 +33,7 @@ type TableProps<T extends { id: string | number }> = {
 
     pageSize?: number;
 
+     searchableKeys?: (keyof T)[];
 };
 
 export default function DataTable<T extends { id: string | number }>({
@@ -44,8 +47,32 @@ export default function DataTable<T extends { id: string | number }>({
     onSelectionChange,
 
     pageSize = 10,
+
+    searchableKeys = [],
     
 }: TableProps<T>) {
+
+    const {
+        searchTerm,
+        setSearchTerm,
+        filteredData,
+    } = useSearch({
+
+        data,
+
+        searchableKeys,
+
+    });
+
+
+
+    useEffect(() => {
+
+        goToPage(1);
+
+    }, [searchTerm]);
+
+
 
     const {
 
@@ -57,7 +84,9 @@ export default function DataTable<T extends { id: string | number }>({
 
         requestSort,
 
-    } = useSorting(data);
+    } = useSorting(filteredData);
+
+    
 
     const {
         currentPage,
@@ -165,6 +194,25 @@ export default function DataTable<T extends { id: string | number }>({
     return (
 
         <div className="table-container">
+
+            <div className="data-table-toolbar">
+
+                <div className="data-table-search">
+
+                    <Search size={18} />
+
+                    <input
+                        type="text"
+                        value={searchTerm}
+                        onChange={(event) =>
+                            setSearchTerm(event.target.value)
+                        }
+                        placeholder="Search..."
+                    />
+
+                </div>
+
+            </div>
 
             <table className="table">                
 
