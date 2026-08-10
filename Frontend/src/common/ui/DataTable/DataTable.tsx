@@ -1,10 +1,8 @@
 import "./DataTable.css";
 import { useEffect, useRef } from "react";
-
 import EmptyState from "../EmptyState/EmptyState";
 
 import { Column } from "./types";
-
 import { useSorting } from "./hooks/useSorting";
 
 import {
@@ -14,6 +12,9 @@ import {
     ArrowDown,
 } from "lucide-react";
 
+import DataTablePagination from "./DataTablePagination";
+
+import { usePagination } from "./hooks/usePagination";
 
 
 type TableProps<T extends { id: string | number }> = {
@@ -57,6 +58,31 @@ export default function DataTable<T extends { id: string | number }>({
 
     } = useSorting(data);
 
+    const {
+        currentPage,
+        pageSize,
+        totalPages,
+        startIndex,
+        endIndex,
+        goToPage,
+        nextPage,
+        previousPage,
+    } = usePagination({
+
+        totalItems: sortedData.length,
+
+        initialPageSize: 10,
+
+    });
+
+    const paginatedData =
+    sortedData.slice(
+        startIndex,
+        endIndex
+    );
+
+    
+
     const selected = selectedRows ?? [];
 
     const selectAllRef = useRef<HTMLInputElement>(null);
@@ -91,7 +117,7 @@ export default function DataTable<T extends { id: string | number }>({
             } else {
 
                 onSelectionChange(
-                    data.map(row => row.id)
+                    paginatedData.map(row => row.id)
                 );
 
             }
@@ -144,7 +170,7 @@ export default function DataTable<T extends { id: string | number }>({
 
         <div className="table-container">
 
-            <table className="table">
+            <table className="table">                
 
                 <thead>
 
@@ -217,8 +243,8 @@ export default function DataTable<T extends { id: string | number }>({
 
                 <tbody>
 
-                    {sortedData.map(row => (
-
+                    {/* {sortedData.map(row => ( */}
+                    {paginatedData.map(row => (
                         <tr key={row.id}
                         className={
                             selected.includes(row.id)
@@ -255,6 +281,29 @@ export default function DataTable<T extends { id: string | number }>({
                     ))}
                 </tbody>
             </table>
+
+                <DataTablePagination
+
+                    currentPage={currentPage}
+
+                    totalPages={totalPages}
+
+                    totalItems={sortedData.length}
+
+                    pageSize={pageSize}
+
+                    startIndex={startIndex}
+
+                    endIndex={endIndex}
+
+                    onPrevious={previousPage}
+
+                    onNext={nextPage}
+
+                    onPageChange={goToPage}
+
+                />
+
         </div>
     );
 }
