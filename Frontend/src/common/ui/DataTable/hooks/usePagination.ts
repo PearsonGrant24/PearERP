@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 type UsePaginationProps = {
     totalItems: number;
     initialPageSize?: number;
+    resetKey?: unknown;
 };
 
 export function usePagination({
@@ -10,6 +11,8 @@ export function usePagination({
     totalItems,
 
     initialPageSize = 10,
+
+    resetKey,
 
 }: UsePaginationProps) {
 
@@ -24,22 +27,22 @@ export function usePagination({
             Math.ceil(totalItems / pageSize)
         );
 
+
     useEffect(() => {
 
-       if (totalPages === 0) {
+       if (currentPage > totalPages) {
 
-        setCurrentPage(1);
+            setCurrentPage(1);
 
-        return;
-
-    }
-    if (currentPage > totalPages) {
-
-        setCurrentPage(1);
-
-    }
-
+        }
+           
         }, [currentPage, totalPages]);
+
+        useEffect(() => {
+
+            setCurrentPage(1);
+
+        }, [resetKey]);
 
 
 

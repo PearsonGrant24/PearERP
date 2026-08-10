@@ -66,12 +66,9 @@ export default function DataTable<T extends { id: string | number }>({
 
 
 
-    useEffect(() => {
-
-        goToPage(1);
-
-    }, [searchTerm]);
-
+    
+    
+//  }, [searchTerm, goToPage]);
 
 
     const {
@@ -100,6 +97,7 @@ export default function DataTable<T extends { id: string | number }>({
     } = usePagination({
         totalItems: sortedData.length,
         initialPageSize: pageSize,
+        resetKey: searchTerm,
     });
 
     const paginatedData =
