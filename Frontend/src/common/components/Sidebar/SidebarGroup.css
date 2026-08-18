@@ -1,31 +1,92 @@
-.sidebar-item{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    padding:12px 16px;
-
-    border-radius:8px;
-
-    color:white;
-
-    text-decoration:none;
-
-    transition:.2s;
-
+.sidebar-group {
+    width: 100%;
 }
 
-.sidebar-item:hover{
+/* Inventory / module header */
+.sidebar-group-header {
+    width: 100%;
 
-    background:var(--color-sidebar-hover);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
+    gap: 14px;
+
+    padding: 14px 16px;
+    margin-bottom: 6px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: transparent;
+    color: #e5e7eb;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    text-align: left;
 }
 
-.sidebar-item.active{
+/* Left side: icon + title */
+.sidebar-group-header .left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
 
-    background:var(--color-primary);
+    min-width: 0;
+}
 
+.sidebar-group-header:hover {
+    background: #1f2937;
+    color: white;
+}
+
+.sidebar-group-header svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* Child navigation container */
+.sidebar-children {
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 18px;
+    padding-left: 16px;
+
+    margin-bottom: 6px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Child links */
+.sidebar-children .sidebar-item {
+    padding: 10px 14px;
+
+    margin-bottom: 3px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Don't create the large active bar used by top-level items */
+.sidebar-children .sidebar-item.active::before {
+    display: none;
+}
+
+/* Child active state */
+.sidebar-children .sidebar-item.active {
+    background: #2563eb;
+
+    color: white;
+
+    box-shadow: none;
 }

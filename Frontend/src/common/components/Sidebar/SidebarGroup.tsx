@@ -1,119 +1,110 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
-
     ChevronDown,
-    LayoutDashboard,
     ChevronRight,
-    LucideIcon,
-
+    Boxes,
 } from "lucide-react";
+
+import { useLocation } from "react-router-dom";
 
 import SidebarItem from "./SidebarItem";
 
 import "./SidebarGroup.css";
 
-type Child={
-
-    title:string;
-
-    path:string;
-
+type Child = {
+    title: string;
+    path: string;
 };
 
-type Props={
+type Props = {
+    title: string;
+    path: string;
+    icon: string;
+    children: Child[];
+    collapsed?: boolean;
+};
 
-    title:string;
-    // path: string;
-    icon: LucideIcon;
-
-    children:Child[];
-
+const icons = {
+    inventory: Boxes,
 };
 
 export default function SidebarGroup({
-
     title,
-
-    icon:Icon,
-
+    icon,
     children,
+    collapsed = false,
+}: Props) {
 
-}:Props){
+    const location = useLocation();
 
-    const [open,setOpen]=useState(false);
+    const hasActiveChild = children.some(
+        child =>
+            location.pathname === child.path ||
+            location.pathname.startsWith(`${child.path}/`)
+    );
 
-    return(
+    const [open, setOpen] = useState(hasActiveChild);
+
+    useEffect(() => {
+
+        if (hasActiveChild) {
+            setOpen(true);
+        }
+
+    }, [hasActiveChild]);
+
+    const Icon =
+        icons[icon as keyof typeof icons];
+
+    return (
 
         <div className="sidebar-group">
 
             <button
-
+                type="button"
                 className="sidebar-group-header"
-
-                onClick={()=>setOpen(!open)}
-
+                onClick={() => setOpen(prev => !prev)}
             >
 
                 <div className="left">
 
-                    <Icon size={20}/>
+                    {Icon && <Icon size={20} />}
 
-                    <span>{title}</span>
-                    
+                    {!collapsed && (
+                        <span>{title}</span>
+                    )}
 
                 </div>
 
-                {
-
+                {!collapsed && (
                     open
-
-                    ?
-
-                    <ChevronDown size={18}/>
-
-                    :
-
-                    <ChevronRight size={18}/>
-                    
-
-                }
+                        ? <ChevronDown size={18} />
+                        : <ChevronRight size={18} />
+                )}
 
             </button>
 
-            {
-
-                open &&
+            {open && !collapsed && (
 
                 <div className="sidebar-children">
 
-                    {
+                    {children.map(child => (
 
-                        children.map(child=>(
+                        <SidebarItem
+                            key={child.title}
+                            title={child.title}
+                            path={child.path}
+                            collapsed={false}
+                        />
 
-                            <SidebarItem
-
-                                key={child.title}
-
-                                title={child.title}
-
-                                path={child.path}
-
-                                // icon={ChevronRight}   // temporary
-                                
-                                
-                            />
-
-                        ))
-
-                    }
+                    ))}
 
                 </div>
 
-            }
+            )}
 
         </div>
 
     );
-
 }
