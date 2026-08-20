@@ -14,26 +14,27 @@
     margin: 0;
     font-size: 28px;
     font-weight: 600;
+    color: var(--text-primary);
 }
 
 .products-page__header p {
-    margin: 8px 0 0;
-    color: #6b7280;
+    margin: 6px 0 0;
+    color: var(--text-secondary);
     font-size: 14px;
 }
 
-.products-page__add-button {
-    display: inline-flex;
+.products-page__header-actions {
+    display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
+}
 
-    padding: 10px 16px;
+.products-page__export-button,
+.products-page__add-button {
+    height: 42px;
+    padding: 0 18px;
 
-    border: none;
     border-radius: 8px;
-
-    background: #111827;
-    color: white;
 
     font-size: 14px;
     font-weight: 500;
@@ -41,12 +42,146 @@
     cursor: pointer;
 }
 
+.products-page__export-button {
+    background: var(--surface);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.products-page__add-button {
+    border: none;
+    background: #2563eb;
+    color: white;
+}
+
+.products-page__export-button:hover {
+    background: var(--background);
+}
+
 .products-page__add-button:hover {
     opacity: 0.9;
 }
 
 
-/* Product cell */
+/* =========================================================
+   Product statistics
+   ========================================================= */
+
+.products-stats {
+    display: grid;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-bottom: 24px;
+}
+
+.products-stats .card {
+    min-height: 132px;
+}
+
+.product-stat {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    height: 100%;
+}
+
+.product-stat__icon {
+    width: 56px;
+    height: 56px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+}
+
+.product-stat__icon--blue {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.product-stat__icon--green {
+    background: #ecfdf5;
+    color: #16a34a;
+}
+
+.product-stat__icon--orange {
+    background: #fff7ed;
+    color: #f59e0b;
+}
+
+.product-stat__icon--red {
+    background: #fef2f2;
+    color: #ef4444;
+}
+
+.product-stat__icon--purple {
+    background: #f5f3ff;
+    color: #7c3aed;
+}
+
+.product-stat__content {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.product-stat__label {
+    color: var(--text-secondary);
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.product-stat__value {
+    margin-top: 4px;
+
+    color: var(--text-primary);
+
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.product-stat__description {
+    margin-top: 8px;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+}
+
+.product-stat__description--blue {
+    color: #2563eb;
+}
+
+.product-stat__description--orange {
+    color: #f59e0b;
+}
+
+.product-stat__description--red {
+    color: #ef4444;
+}
+
+.product-stat__description--purple {
+    color: #7c3aed;
+}
+
+
+/* =========================================================
+   Product name
+   ========================================================= */
 
 .product-name-cell {
     display: flex;
@@ -70,21 +205,27 @@
 
 .product-name-cell strong {
     display: block;
+
     font-size: 14px;
     font-weight: 500;
+
+    color: var(--text-primary);
 }
 
 .product-name-cell span {
     display: block;
+
     margin-top: 3px;
 
-    color: #6b7280;
+    color: var(--text-secondary);
 
     font-size: 12px;
 }
 
 
-/* Status */
+/* =========================================================
+   Product status
+   ========================================================= */
 
 .product-status {
     display: inline-flex;
@@ -114,7 +255,9 @@
 }
 
 
-/* Row actions */
+/* =========================================================
+   Row actions
+   ========================================================= */
 
 .product-action-button {
     display: inline-flex;
@@ -129,12 +272,41 @@
 
     background: transparent;
 
-    color: #6b7280;
+    color: var(--text-secondary);
 
     cursor: pointer;
 }
 
 .product-action-button:hover {
-    background: #f3f4f6;
-    color: #111827;
+    background: var(--background);
+    color: var(--text-primary);
+}
+
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .products-stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .products-page__header {
+        flex-direction: column;
+    }
+
+    .products-page__header-actions {
+        width: 100%;
+    }
+
+    .products-stats {
+        grid-template-columns: 1fr;
+    }
+
 }

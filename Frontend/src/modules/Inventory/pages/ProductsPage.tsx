@@ -1,12 +1,22 @@
 import "./ProductsPage.css";
 
 import { useState } from "react";
-import { MoreHorizontal, PackagePlus } from "lucide-react";
+import {
+    Package,
+    PackageCheck,
+    AlertTriangle,
+    PackageX,
+    DollarSign,
+    MoreHorizontal,
+} from "lucide-react";
 
+import Card from "../../../packages/dashboard/components/Card/Card";
 import DataTable from "../../../common/ui/DataTable/DataTable";
-import { Column } from "../../../common/ui/DataTable/types";
+import { Column } from "../../..//common/ui/DataTable/types";
 
 import { Product } from "../Products/types";
+
+import "./ProductsPage.css";
 
 
 const products: Product[] = [
@@ -84,12 +94,11 @@ export default function ProductsPage() {
                 <div className="product-name-cell">
 
                     <div className="product-icon">
-                        <PackagePlus size={18} />
+                        <Package size={18} />
                     </div>
 
                     <div>
                         <strong>{product.name}</strong>
-
                         <span>{product.sku}</span>
                     </div>
 
@@ -160,27 +169,185 @@ export default function ProductsPage() {
 
         <div className="products-page">
 
+            {/* Page Header */}
+
             <div className="products-page__header">
 
                 <div>
                     <h1>Products</h1>
 
                     <p>
-                        Manage your products, stock levels and product information.
+                        Manage all your products and inventory items
                     </p>
                 </div>
 
-                <button
-                    className="products-page__add-button"
-                    onClick={() => {
-                        // Product creation will be implemented next.
-                    }}
-                >
-                    + Add Product
-                </button>
+                <div className="products-page__header-actions">
+
+                    <button className="products-page__export-button">
+                        Export
+                    </button>
+
+                    <button className="products-page__add-button">
+                        + Add Product
+                    </button>
+
+                </div>
 
             </div>
 
+
+            {/* Statistics */}
+
+            <div className="products-stats">
+
+                <Card>
+
+                    <div className="product-stat">
+
+                        <div className="product-stat__icon product-stat__icon--blue">
+                            <Package size={22} />
+                        </div>
+
+                        <div className="product-stat__content">
+
+                            <span className="product-stat__label">
+                                Total Products
+                            </span>
+
+                            <strong className="product-stat__value">
+                                356
+                            </strong>
+
+                            <span className="product-stat__description product-stat__description--blue">
+                                All active products
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </Card>
+
+
+                <Card>
+
+                    <div className="product-stat">
+
+                        <div className="product-stat__icon product-stat__icon--green">
+                            <PackageCheck size={22} />
+                        </div>
+
+                        <div className="product-stat__content">
+
+                            <span className="product-stat__label">
+                                In Stock
+                            </span>
+
+                            <strong className="product-stat__value">
+                                289
+                            </strong>
+
+                            <span className="product-stat__description">
+                                81% of total
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </Card>
+
+
+                <Card>
+
+                    <div className="product-stat">
+
+                        <div className="product-stat__icon product-stat__icon--orange">
+                            <AlertTriangle size={22} />
+                        </div>
+
+                        <div className="product-stat__content">
+
+                            <span className="product-stat__label">
+                                Low Stock
+                            </span>
+
+                            <strong className="product-stat__value">
+                                42
+                            </strong>
+
+                            <span className="product-stat__description product-stat__description--orange">
+                                Require attention
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </Card>
+
+
+                <Card>
+
+                    <div className="product-stat">
+
+                        <div className="product-stat__icon product-stat__icon--red">
+                            <PackageX size={22} />
+                        </div>
+
+                        <div className="product-stat__content">
+
+                            <span className="product-stat__label">
+                                Out of Stock
+                            </span>
+
+                            <strong className="product-stat__value">
+                                25
+                            </strong>
+
+                            <span className="product-stat__description product-stat__description--red">
+                                Need to reorder
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </Card>
+
+
+                <Card>
+
+                    <div className="product-stat">
+
+                        <div className="product-stat__icon product-stat__icon--purple">
+                            <DollarSign size={22} />
+                        </div>
+
+                        <div className="product-stat__content">
+
+                            <span className="product-stat__label">
+                                Total Value
+                            </span>
+
+                            <strong className="product-stat__value">
+                                $128,560.00
+                            </strong>
+
+                            <span className="product-stat__description product-stat__description--purple">
+                                Inventory value
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </Card>
+
+            </div>
+
+
+            {/* Products Table */}
 
             <div className="products-page__content">
 
