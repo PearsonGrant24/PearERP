@@ -36,6 +36,7 @@ type TableProps<T extends { id: string | number }> = {
      searchableKeys?: (keyof T)[];
 };
 
+
 export default function DataTable<T extends { id: string | number }>({
 
     columns,
@@ -59,18 +60,11 @@ export default function DataTable<T extends { id: string | number }>({
     } = useSearch({
 
         data,
-
         searchableKeys,
 
-    });
-
-
-
-    
+    });   
     
 //  }, [searchTerm, goToPage]);
-
-
     const {
 
         sortedData,
@@ -81,9 +75,7 @@ export default function DataTable<T extends { id: string | number }>({
 
         requestSort,
 
-    } = useSorting(filteredData);
-
-    
+    } = useSorting(filteredData);    
 
     const {
         currentPage,
@@ -166,10 +158,7 @@ export default function DataTable<T extends { id: string | number }>({
 
             }
 
-        }
-
-    
-    
+        }  
 
     if (data.length === 0) {
 
