@@ -19,6 +19,8 @@ import { usePagination } from "./hooks/usePagination";
 import { useSearch } from "./hooks/useSearch";
 
 
+
+
 type TableProps<T extends { id: string | number }> = {
 
     columns: Column<T>[];
@@ -33,7 +35,10 @@ type TableProps<T extends { id: string | number }> = {
 
     pageSize?: number;
 
-     searchableKeys?: (keyof T)[];
+    searchableKeys?: (keyof T)[];
+
+    showSearch?: boolean;
+    resetKey?: string | number;
 };
 
 
@@ -50,6 +55,10 @@ export default function DataTable<T extends { id: string | number }>({
     pageSize = 10,
 
     searchableKeys = [],
+
+    showSearch = true,
+
+    resetKey,
     
 }: TableProps<T>) {
 
@@ -182,24 +191,28 @@ export default function DataTable<T extends { id: string | number }>({
 
         <div className="table-container">
 
-            <div className="data-table-toolbar">
+            {showSearch && (
 
-                <div className="data-table-search">
+    <div className="data-table-toolbar">
 
-                    <Search size={18} />
+        <div className="data-table-search">
 
-                    <input
-                        type="text"
-                        value={searchTerm}
-                        onChange={(event) =>
-                            setSearchTerm(event.target.value)
-                        }
-                        placeholder="Search..."
-                    />
+            <Search size={18} />
 
-                </div>
+            <input
+                type="text"
+                value={searchTerm}
+                onChange={(event) =>
+                    setSearchTerm(event.target.value)
+                }
+                placeholder="Search..."
+            />
 
-            </div>
+        </div>
+
+    </div>
+
+)}
 
             <table className="table">                
 
