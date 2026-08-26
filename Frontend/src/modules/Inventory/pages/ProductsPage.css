@@ -310,3 +310,172 @@
     }
 
 }
+
+/* =========================================================
+   Product filter toolbar
+   ========================================================= */
+
+.products-filter-toolbar {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+
+    padding: 24px;
+
+    margin-bottom: 24px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* Search */
+
+.products-search {
+    position: relative;
+
+    flex: 1;
+    min-width: 280px;
+
+    display: flex;
+    align-items: center;
+}
+
+.products-search svg {
+    position: absolute;
+    left: 14px;
+
+    color: var(--text-secondary);
+
+    pointer-events: none;
+}
+
+.products-search input {
+    width: 100%;
+    height: 42px;
+
+    padding: 0 14px 0 42px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: var(--surface);
+
+    color: var(--text-primary);
+
+    font-size: 13px;
+
+    outline: none;
+}
+
+.products-search input::placeholder {
+    color: var(--text-secondary);
+}
+
+.products-search input:focus {
+    border-color: #2563eb;
+}
+
+
+/* Select filters */
+
+.products-filter {
+    min-width: 145px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.products-filter label {
+    font-size: 12px;
+    font-weight: 500;
+
+    color: var(--text-secondary);
+}
+
+.products-filter select {
+    width: 100%;
+    height: 42px;
+
+    padding: 0 34px 0 12px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: var(--surface);
+    color: var(--text-primary);
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    outline: none;
+}
+
+.products-filter select:focus {
+    border-color: #2563eb;
+}
+
+
+/* Filter button */
+
+.products-filter-button {
+    height: 42px;
+
+    padding: 0 16px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: var(--surface);
+    color: var(--text-primary);
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.products-filter-button:hover {
+    background: var(--background);
+}
+
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+
+    .products-filter-toolbar {
+        flex-wrap: wrap;
+    }
+
+    .products-search {
+        flex-basis: 100%;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .products-filter-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .products-search {
+        min-width: 0;
+    }
+
+    .products-filter {
+        width: 100%;
+    }
+
+}

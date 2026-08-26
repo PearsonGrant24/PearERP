@@ -1,6 +1,6 @@
 import "./ProductsPage.css";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import {
     Package,
     PackageCheck,
@@ -98,9 +98,68 @@ const products: Product[] = [
 
 export default function ProductsPage() {
 
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const [categoryFilter, setCategoryFilter] =
+        useState("All Categories");
+
+    const [typeFilter, setTypeFilter] =
+        useState("All Types");
+
+    const [statusFilter, setStatusFilter] =
+        useState("All Statuses");
+
+    const [warehouseFilter, setWarehouseFilter] =
+        useState("All Warehouses");
+
     const [selectedProducts, setSelectedProducts] =
         useState<(string | number)[]>([]);
 
+    const filteredProducts = useMemo(() => {
+
+        const search = searchTerm.toLowerCase().trim();
+
+        return products.filter(product => {
+
+            const matchesSearch =
+                !search ||
+                product.name.toLowerCase().includes(search) ||
+                product.sku.toLowerCase().includes(search) ||
+                product.barcode?.toLowerCase().includes(search);
+
+            const matchesCategory =
+                categoryFilter === "All Categories" ||
+                product.category === categoryFilter;
+
+            const matchesType =
+                typeFilter === "All Types" ||
+                product.type === typeFilter;
+
+            const matchesStatus =
+                statusFilter === "All Statuses" ||
+                product.status === statusFilter;
+
+            const matchesWarehouse =
+                warehouseFilter === "All Warehouses" ||
+                product.warehouse === warehouseFilter;
+
+            return (
+                matchesSearch &&
+                matchesCategory &&
+                matchesType &&
+                matchesStatus &&
+                matchesWarehouse
+            );
+
+        });
+
+}, [
+    searchTerm,
+    categoryFilter,
+    typeFilter,
+    statusFilter,
+    warehouseFilter,
+]);
 
     const columns: Column<Product>[] = [
 
@@ -247,9 +306,7 @@ export default function ProductsPage() {
 
                 </Card>
 
-
                 <Card>
-
                     <div className="product-stat">
 
                         <div className="product-stat__icon product-stat__icon--green">
@@ -275,7 +332,6 @@ export default function ProductsPage() {
                     </div>
 
                 </Card>
-
 
                 <Card>
 
@@ -334,7 +390,6 @@ export default function ProductsPage() {
 
                 </Card>
 
-
                 <Card>
 
                     <div className="product-stat">
@@ -365,6 +420,117 @@ export default function ProductsPage() {
 
             </div>
 
+            <div className="products-filter-toolbar">
+
+                <div className="products-search">
+
+                    {/* <Search size={18} /> */}
+
+                    <input
+                        type="text"
+                        value={searchTerm}
+                        onChange={(event) =>
+                            setSearchTerm(event.target.value)
+                        }
+                        placeholder="Search products by name, SKU or barcode..."
+                    />
+
+                </div>
+
+
+                <div className="products-filter">
+
+                    <label>Category</label>
+
+                    <select
+                        value={categoryFilter}
+                        onChange={(event) =>
+                            setCategoryFilter(event.target.value)
+                        }
+                    >
+                        <option>All Categories</option>
+                        <option>Household</option>
+                        <option>Plumbing</option>
+                        <option>Raw Materials</option>
+                        <option>Consumables</option>
+                        <option>Packaging</option>
+                    </select>
+
+                </div>
+
+
+                <div className="products-filter">
+
+                    <label>Product Type</label>
+
+                    <select
+                        value={typeFilter}
+                        onChange={(event) =>
+                            setTypeFilter(event.target.value)
+                        }
+                    >
+                        <option>All Types</option>
+                        <option>Finished Product</option>
+                        <option>Raw Material</option>
+                        <option>Consumable</option>
+                        <option>Packaging Material</option>
+                    </select>
+
+                </div>
+
+
+                <div className="products-filter">
+
+                    <label>Stock Status</label>
+
+                    <select
+                        value={statusFilter}
+                        onChange={(event) =>
+                            setStatusFilter(event.target.value)
+                        }
+                    >
+                        <option>All Statuses</option>
+                        <option>In Stock</option>
+                        <option>Low Stock</option>
+                        <option>Out of Stock</option>
+                    </select>
+
+                </div>
+
+
+                <div className="products-filter">
+
+                    <label>Warehouse</label>
+
+                    <select
+                        value={warehouseFilter}
+                        onChange={(event) =>
+                            setWarehouseFilter(event.target.value)
+                        }
+                    >
+                        <option>All Warehouses</option>
+                        <option>Main Warehouse</option>
+                        <option>Raw Materials Warehouse</option>
+                        <option>Packaging Warehouse</option>
+                    </select>
+
+                </div>
+
+
+                <button
+                    className="products-filter-button"
+                    onClick={() => {
+                        setSearchTerm("");
+                        setCategoryFilter("All Categories");
+                        setTypeFilter("All Types");
+                        setStatusFilter("All Statuses");
+                        setWarehouseFilter("All Warehouses");
+                    }}
+                >
+                    Filters
+                </button>
+
+            </div>
 
             {/* Products Table */}
 
@@ -372,14 +538,12 @@ export default function ProductsPage() {
 
                 <DataTable
                     columns={columns}
-                    data={products}
+                    data={filteredProducts}
                     selectedRows={selectedProducts}
                     onSelectionChange={setSelectedProducts}
-                    searchableKeys={[
-                        "name",
-                        "sku",
-                        "category",
-                    ]}
+                    searchableKeys={[]}
+                    showSearch={false}
+                    resetKey={filteredProducts.length}
                     pageSize={10}
                 />
 
